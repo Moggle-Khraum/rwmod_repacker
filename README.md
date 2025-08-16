@@ -13,7 +13,7 @@
 - [Testing Your Build](#-testing-your-build)
 - [Security Notes](#-security-notes)
 - [Troubleshooting](#-troubleshooting)
-- [Advanced](#-advanced)
+- [Advanced](#advanced-)
 
 ![RWMod Repacker Screenshot](screenshot.png)
 
@@ -140,8 +140,9 @@ python setup.py bdist_msi
 | False positives | Verify SHA256 matches your build |
 
 ---
-🔧 **Advanced**: To modify protections, edit `rwmod_repacker_v3.py`:
+## 🔧Advanced : 
+- To modify protections, edit `rwmod_repacker_v3.py`:
 - `get_header_sig()` - Change signature pattern
 - `tamper_zip()` - Adjust obfuscation settings
 
-© 2023 Moggstone | [Report Issues](https://github.com/yourrepo/issues)
+© 2023 Moggstone | [Report Issues](https://github.com/Moggle-Khraum/rwmod_repacker/issues)
