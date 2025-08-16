@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RWMod Repacker - Secure Mod Packaging</title>
-	<link rel="icon" href="https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/docs/favicon.ico?raw=true" type="image/x-icon">
-	
+    <link rel="icon" href="https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/docs/favicon.ico?raw=true" type="image/x-icon">
+
     <style>
         :root {
             --bg: #1a1a1a;
@@ -28,11 +28,6 @@
         header {
             text-align: center;
             margin-bottom: 40px;
-        }
-
-        header p {
-            margin: 5px 0;
-            color: #aaa;
         }
 
         .download-box {
@@ -58,14 +53,14 @@
             position: relative;
         }
 
-        .download-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0, 204, 136, 0.3);
-        }
-
         .download-btn.alt {
             background: #444;
             color: #fff;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0, 204, 136, 0.3);
         }
 
         .badge {
@@ -79,13 +74,6 @@
             border-radius: 20px;
         }
 
-        .checksum {
-            font-family: monospace;
-            font-size: 0.9em;
-            margin-top: 5px;
-            color: #aaa;
-        }
-
         .features {
             background: var(--card-bg);
             padding: 25px;
@@ -94,35 +82,11 @@
             margin: 40px auto;
         }
 
-        .features h3 {
-            margin-top: 0;
-            color: var(--accent);
-        }
-
-        .features li {
-            margin: 10px 0;
-            list-style-type: none;
-            position: relative;
-            padding-left: 30px;
-        }
-
-        .features li::before {
-            content: "✅";
-            position: absolute;
-            left: 0;
-        }
-
         footer {
             text-align: center;
             margin-top: 50px;
             color: #777;
             font-size: 0.9em;
-        }
-
-        .link-row a {
-            color: var(--accent);
-            margin-right: 15px;
-            text-decoration: none;
         }
     </style>
 </head>
@@ -135,26 +99,21 @@
 </header>
 
 <main>
-    <!-- Combined Download Box -->
     <div class="download-box">
         <h2>Choose what version to download:</h2>
         <div style="display:flex; justify-content:center; gap:15px; flex-wrap:wrap;">
-
             <div style="text-align:center;">
                 <a href="https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/releases/program_installer/RWMod_Repacker_Setup.msi"
-                   class="download-btn">
-                    Installer (v1.3.0)
-                </a>
-                <div style="font-size:0.8em; margin-top:5px;">Automatically installs on Windows</div>
+                   class="download-btn">Installer (v1.3.0)</a>
+                <div style="font-size:0.8em;margin-top:5px;">Automatically installs on Windows</div>
             </div>
-
             <div style="text-align:center;">
                 <a href="https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/releases/portable_zips/RWMod_repacker_v1.3.zip"
                    class="download-btn alt">
                     Portable (v1.3.0)
                     <span class="badge">Recommended</span>
                 </a>
-                <div style="font-size:0.8em; margin-top:5px;">Run directly without installing</div>
+                <div style="font-size:0.8em;margin-top:5px;">Run directly without installing</div>
             </div>
         </div>
 
@@ -162,59 +121,60 @@
             <strong>Installer Hashes:</strong><br>
             MD5: 0f6ad26ea6246b44562471df6c57da88<br>
             SHA1: 2ef140707cfbafd554228d132c497c97fa57b5c3<br>
-            <a href="https://virusscan.jotti.org/en-US/filescanjob/60ewcn29ji" target="_blank"
-			style="color:#35b746; text-decoration:underline;">Check on Jotti Scan</a>
-
+            <a href="https://virusscan.jotti.org/en-US/filescanjob/60ewcn29ji" target="_blank" style="color:inherit; text-decoration:none;">Check on Jotti Scan</a>
         </div>
         <div style="margin-top:15px;">
             <strong>Portable Hashes:</strong><br>
-            MD5: 7269b9de9f322114e870964943f9fa82><br>
+            MD5: 7269b9de9f322114e870964943f9fa82<br>
             SHA1: 257d6256e83154ec0647c7021ef7d503ad026d4b<br>
-            <a href="https://virusscan.jotti.org/en-US/filescanjob/rh5b7dodqv" target="_blank" style="color:#35b746; text-decoration:underline;">Check on Jotti Scan</a>
+            <a href="https://virusscan.jotti.org/en-US/filescanjob/rh5b7dodqv" target="_blank" style="color:inherit; text-decoration:none;">Check on Jotti Scan</a>
         </div>
     </div>
 
-    <section>
-    <!-- Top Row: Key Features | Issues -->
-    <div style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
+<section>
+    <div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center;">
         <div class="features" style="flex:1 1 300px;">
             <h3>Key Features:</h3>
             <ul>
                 <li>Tamper-proof .RWMOD File</li>
                 <li>Obfuscated Package</li>
                 <li>Fully Functional .RWMOD File</li>
-				<li>100% READABLE and PLAYABLE</li>
+                <li>100% READABLE and PLAYABLE</li>
             </ul>
         </div>
-
         <div class="features" style="flex:1 1 300px;">
             <h3>Issues</h3>
-            <ul id="issues-list" style="margin:0; padding-left:18px; font-size:0.9em;"></ul>
+            <ul id="issues-list" style="margin:0;padding-left:18px;font-size:0.9em;"></ul>
         </div>
     </div>
 
-    <!-- Middle Row: Usage GIF | Program UI -->
-    <div style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center; margin-top:25px;">
+    <div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin-top:25px;">
         <div class="features" style="flex:1 1 300px;">
             <h3><center>Usage of the Tool:</center></h3>
             <img src="https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/docs/showcase.gif?raw=true"
-                 alt="Usage GIF" style="max-width:100%; border-radius:8px;">
-            <div style="font-size:0.85em; color:#aaa; text-align:center;">(Live preview GIF)</div>
+                 style="max-width:100%;border-radius:8px;">
         </div>
-
         <div class="features" style="flex:1 1 300px;">
             <h3><center>User Interface of the Tool:</center></h3>
             <a href="https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/docs/screenshot.PNG?raw=true" target="_blank">
                 <img src="https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/docs/screenshot.PNG?raw=true"
-                     alt="Program UI Screenshot" style="max-width:100%; border-radius:8px;">
+                     style="max-width:100%;border-radius:8px;">
             </a>
-            <div style="font-size:0.85em; color:#aaa; margin-top:5px;text-align:center;">(Click to view full Program UI)</div>
         </div>
     </div>
 
-
-</div>
-
+    <div style="display:flex;flex-wrap:wrap;gap:20px;justify-content:center;margin-top:25px;">
+        <div class="features" style="flex:1 1 300px;">
+            <h3>GIF Result</h3>
+            <img src="https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/docs/testing.gif?raw=true"
+                 style="max-width:100%;border-radius:8px;">
+        </div>
+        <div class="features" style="flex:1 1 300px;">
+            <h3>Gameplay Preview</h3>
+            <img src="https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/docs/gameplay.gif?raw=true"
+                 style="max-width:100%;border-radius:8px;">
+        </div>
+    </div>
 </section>
 
 <script>
@@ -231,73 +191,58 @@ fetch("https://api.github.com/repos/Moggle-Khraum/rwmod_repacker/issues?per_page
       data.forEach(issue => {
         const li = document.createElement("li");
         li.innerHTML =
-          `<a href="${issue.html_url}" target="_blank" style="color:var(--accent); text-decoration:none;">
-            #${issue.number} – ${issue.title}
-          </a>`;
+          `<a href="${issue.html_url}" target="_blank" style="color:var(--accent);text-decoration:none;">#${issue.number} – ${issue.title}</a>`;
         list.appendChild(li);
       });
     }
-
     const footerLi = document.createElement("li");
     footerLi.style.listStyle = "none";
     footerLi.style.marginTop = "4px";
     footerLi.innerHTML =
-      `<a href="https://github.com/Moggle-Khraum/rwmod_repacker/issues" target="_blank"
-        style="color:var(--accent); text-decoration:none; font-weight:bold;">View all →</a>`;
+      `<a href="https://github.com/Moggle-Khraum/rwmod_repacker/issues" target="_blank" style="color:var(--accent);text-decoration:none;font-weight:bold;">View all →</a>`;
     list.appendChild(footerLi);
   })
-  .catch(() => {
-    list.innerHTML = "<li>Could not load issues</li>";
-  });
-  
-  const btn = document.getElementById("backToTop");
-
-	// Show the button after scrolling down 300px
-	window.onscroll = () => {
-	if (document.documentElement.scrollTop > 300) {
-		btn.style.display = "block";
-	} else {
-		btn.style.display = "none";
-			}
-	};
-
-// Scroll to top when button clicked
-btn.onclick = () => {
-  window.scrollTo({ top: 0, behavior: "smooth" });
-};
-  
-  
-  
+  .catch(() => { list.innerHTML = "<li>Could not load issues</li>"; });
 </script>
 
-	
-</main>
-
-<div style="text-align:center; margin-top:40px;">
+<div style="text-align:center;margin-top:40px;">
     <a href="https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/README.md" target="_blank"
-       style="background:var(--accent); color:black; padding:12px 24px; font-weight:bold; border-radius:6px; text-decoration:none;">
+       style="background:var(--accent);color:black;padding:12px 24px;font-weight:bold;border-radius:6px;text-decoration:none;">
         View README / Documentation
     </a>
 </div>
 
-
 <footer>
     <p>© 2025 Moggstone | Built with Github Pages</p>
 </footer>
+
 <!-- Back To Top Button -->
 <button id="backToTop" style="
     position: fixed;
-    bottom: 30px;
-    right: 30px;
+    bottom: 25px;
+    right: 25px;
     background: var(--accent);
     color: #000;
     border: none;
-    padding: 12px 16px;
+    padding: 12px;
     border-radius: 50%;
-    font-size: 18px;
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0,0,0,0.3);
     display:none;
-">↑</button>
+">
+    <img src="https://imgs.search.brave.com/sL2TytKMq8H-XfrxtNyXSQHGp-S_RZYEMXVx8l6uOOo/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91eHdp/bmcuY29tL3dwLWNv/bnRlbnQvdGhlbWVz/L3V4d2luZy9kb3du/bG9hZC9hcnJvdy1k/aXJlY3Rpb24vYXJy/b3ctdG9wLWRpcmVj/dGlvbi1ncmVlbi1p/Y29uLnN2Zw"
+         style="width:20px;height:20px;">
+</button>
+
+<script>
+window.addEventListener('scroll', () => {
+  const btn = document.getElementById('backToTop');
+  btn.style.display = (document.documentElement.scrollTop > 300) ? 'block' : 'none';
+});
+document.getElementById('backToTop').addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+});
+</script>
+
 </body>
 </html>
