@@ -8,7 +8,7 @@
 
 ## 📑 Table of Contents
 - [Protection Process](#%EF%B8%8F-protection-process-dummying-)
-- [Features](#-features)
+- [Features](https://github.com/Moggle-Khraum/rwmod_repacker/tree/main?tab=readme-ov-file#features)
 - [Pre-Built Downloads](#-pre-built-downloads)
 - [For Paranoid Builders](#-for-paranoid-builders)
   - [Prerequisites](#prerequisites)
