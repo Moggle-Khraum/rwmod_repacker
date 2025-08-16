@@ -15,8 +15,6 @@
 - [Troubleshooting](#-troubleshooting)
 - [Advanced](#-advanced)
 
-
-
 ![RWMod Repacker Screenshot](screenshot.png)
 
 A security-focused tool that packages game mods into protected `.rwmod` files with anti-tampering measures.
