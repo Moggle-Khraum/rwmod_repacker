@@ -171,36 +171,80 @@
     </div>
 
     <section class="features">
-        <h3>Key Features</h3>
-        <ul>
-            <li>Tamper-proof .rwmod packaging</li>
-            <li>Offset obfuscation</li>
-            <li>One-click installer</li>
-        </ul>
-
-        <div class="link-row" style="margin-top:25px;">
-            <a href="https://github.com/Moggle-Khraum/rwmod_repacker/issues" target="_blank">Issues</a>
-            
+    <div style="display:flex; justify-content:space-between; align-items:center;">
+        <h3 style="margin:0;">Key Features</h3>
+        <div>
+            <strong>Issues</strong>
+            <ul id="issues-list" style="margin:0; padding-left:18px; font-size:0.9em;"></ul>
         </div>
+    </div>
 
-        <!-- Auto-playing GIF example -->
-        <div style="margin-top:20px; text-align:center;">
-			<h3>Usage of the Tool</h3>
-            <img src="https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/docs/showcase.gif?raw=true"
-                 alt="Program showcase" style="max-width:100%; border-radius:8px;">
-            <div style="font-size:0.85em; color:#aaa; margin-top:5px;">(Live preview GIF)</div>
-        </div>
+    <ul>
+        <li>Tamper-proof .rwmod packaging</li>
+        <li>Offset obfuscation</li>
+        <li>One-click installer</li>
+    </ul>
 
-        <!-- Program UI Display -->
-        <div style="margin-top:20px; text-align:center;">
-			<h3>User Interface of the Tool</h3>
-            <a href="https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/docs/screenshot.PNG?raw=true" target="_blank">
-                <img src="https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/docs/screenshot.PNG?raw=true"
-                     alt="Program UI Screenshot" style="max-width:100%; border-radius:8px;">
-            </a>
-            <div style="font-size:0.85em; color:#aaa; margin-top:5px;">(Click to view full Program UI)</div>
-        </div>
-    </section>
+    <!-- Auto-playing GIF example -->
+    <div style="margin-top:20px; text-align:center;">
+        <h3>Usage of the Tool</h3>
+        <img src="https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/docs/showcase.gif?raw=true"
+             alt="Program showcase" style="max-width:100%; border-radius:8px;">
+        <div style="font-size:0.85em; color:#aaa; margin-top:5px;">(Live preview GIF)</div>
+    </div>
+
+    <!-- Program UI Display -->
+    <div style="margin-top:20px; text-align:center;">
+        <h3>User Interface of the Tool</h3>
+        <a href="https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/docs/screenshot.PNG?raw=true" target="_blank">
+            <img src="https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/docs/screenshot.PNG?raw=true"
+                 alt="Program UI Screenshot" style="max-width:100%; border-radius:8px;">
+        </a>
+        <div style="font-size:0.85em; color:#aaa; margin-top:5px;">(Click to view full Program UI)</div>
+    </div>
+</section>
+
+<script>
+const list = document.getElementById("issues-list");
+/* Show loading placeholder */
+list.innerHTML = "<li>Loading issues…</li>";
+
+/* Fetch latest 5 issues from GitHub repo */
+fetch("https://api.github.com/repos/Moggle-Khraum/rwmod_repacker/issues?per_page=5&state=open")
+  .then(res => res.json())
+  .then(data => {
+    list.innerHTML = ""; // clear
+
+    if (!Array.isArray(data) || data.length === 0) {
+      list.innerHTML = "<li>No open issues</li>";
+    } else {
+      data.forEach(issue => {
+        const li = document.createElement("li");
+        li.innerHTML =
+          `<a href="${issue.html_url}" target="_blank" style="color:var(--accent); text-decoration:none;">
+            #${issue.number} – ${issue.title}
+          </a>`;
+        list.appendChild(li);
+      });
+    }
+
+    /* Add "View all" */
+    const footerLi = document.createElement("li");
+    footerLi.style.listStyle = "none";
+    footerLi.style.marginTop = "4px";
+    footerLi.innerHTML =
+      `<a href="https://github.com/Moggle-Khraum/rwmod_repacker/issues" target="_blank"
+        style="color:var(--accent); text-decoration:none; font-weight:bold;">View all →</a>`;
+    list.appendChild(footerLi);
+  })
+  .catch(() => {
+    list.innerHTML = "<li>Could not load issues</li>";
+  });
+</script>
+
+	
+
+	
 </main>
 
 <footer>
