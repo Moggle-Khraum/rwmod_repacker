@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,18 +33,16 @@
             color: #aaa;
         }
 
-        /* Button container */
         .download-box {
             background: var(--card-bg);
             padding: 25px;
             border-radius: 8px;
             text-align: center;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
             margin: 40px auto;
             max-width: 550px;
         }
 
-        /* Buttons */
         .download-btn {
             display: inline-block;
             background: var(--accent);
@@ -54,11 +53,12 @@
             border-radius: 4px;
             margin: 10px;
             transition: all 0.3s ease;
+            position: relative;
         }
 
         .download-btn:hover {
             transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0,204,136,0.3);
+            box-shadow: 0 6px 12px rgba(0, 204, 136, 0.3);
         }
 
         .download-btn.alt {
@@ -66,8 +66,15 @@
             color: white;
         }
 
-        .download-btn.alt:hover {
-            background: #555;
+        .badge {
+            position: absolute;
+            top: -10px;
+            right: -10px;
+            background: #ff5050;
+            padding: 4px 6px;
+            color: #fff;
+            font-size: 0.7em;
+            border-radius: 20px;
         }
 
         .checksum {
@@ -77,7 +84,6 @@
             color: #aaa;
         }
 
-        /* Features Section */
         .features {
             background: var(--card-bg);
             padding: 25px;
@@ -89,10 +95,6 @@
         .features h3 {
             margin-top: 0;
             color: var(--accent);
-        }
-
-        .features ul {
-            padding-left: 20px;
         }
 
         .features li {
@@ -114,8 +116,15 @@
             color: #777;
             font-size: 0.9em;
         }
+
+        .link-row a {
+            color: var(--accent);
+            margin-right: 15px;
+            text-decoration: none;
+        }
     </style>
 </head>
+
 <body>
     <header>
         <h1>RWMod Repacker</h1>
@@ -128,17 +137,39 @@
         <div class="download-box">
             <h2>Choose what version to download</h2>
             <div style="display:flex; justify-content:center; gap:15px; flex-wrap:wrap;">
-                <a href="https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/releases/program_installer/RWMod_Repacker_Setup.msi"
-                   class="download-btn">
-                    Installer (v1.3.0)
-                </a>
-                <a href="https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/releases/portable_zips/RWMod_repacker_v1.3.zip"
-                   class="download-btn alt">
-                    Portable (v1.3.0)
-                </a>
+
+                <!-- Installer -->
+                <div style="text-align:center;">
+                    <a href="https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/releases/program_installer/RWMod_Repacker_Setup.msi"
+                        class="download-btn">
+                        Installer (v1.3.0)
+                    </a>
+                    <div style="font-size:0.8em; margin-top:5px;">Automatically installs on Windows</div>
+                </div>
+
+                <!-- Portable -->
+                <div style="text-align:center;">
+                    <a href="https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/releases/portable_zips/RWMod_repacker_v1.3.zip"
+                        class="download-btn alt">
+                        Portable (v1.3.0)
+                        <span class="badge">Recommended</span>
+                    </a>
+                    <div style="font-size:0.8em; margin-top:5px;">Run directly without installing</div>
+                </div>
             </div>
-            <div class="checksum">Installer SHA256: [MSI_HASH]</div>
-            <div class="checksum">Portable SHA256: [ZIP_HASH]</div>
+
+            <div style="margin-top:15px;">
+                <strong>Installer Hashes:</strong><br>
+                MD5: 0f6ad26ea6246b44562471df6c57da88<br>
+                SHA1: 2ef140707cfbafd554228d132c497c97fa57b5c3<br>
+                <a href="https://virusscan.jotti.org/en-US/filescanjob/60ewcn29ji" target="_blank">Check on Jotti Scan</a>
+            </div>
+            <div style="margin-top:15px;">
+                <strong>Portable Hashes:</strong><br>
+                MD5: 7269b9de9f322114e870964943f9fa82<br>
+                SHA1: 257d6256e83154ec0647c7021ef7d503ad026d4b<br>
+                <a href="https://virusscan.jotti.org/en-US/filescanjob/rh5b7dodqv" target="_blank">Check on Jotti Scan</a>
+            </div>
         </div>
 
         <section class="features">
@@ -148,6 +179,12 @@
                 <li>Offset obfuscation</li>
                 <li>One-click installer</li>
             </ul>
+
+            <div class="link-row" style="margin-top:25px;">
+                <a href="https://github.com/Moggle-Khraum/rwmod_repacker/issues" target="_blank">Issues</a>
+                <a href="#" target="_blank">Video Example</a>
+                <a href="#" target="_blank">Program UI</a>
+            </div>
         </section>
     </main>
 
@@ -155,4 +192,5 @@
         <p>© 2025 Moggstone | Built with Github Pages</p>
     </footer>
 </body>
+
 </html>
