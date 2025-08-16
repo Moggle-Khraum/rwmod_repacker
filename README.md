@@ -47,11 +47,17 @@ The RWMod Repacker uses a multi-layered "dummying" technique to protect mod file
 ```
 
 ## Features
+- ----------- TOOL FEATURES --------------
+- 🖥️ Simple GUI interface
+- 📂 Easy Click in Mod/Output Selection
+- 📰 Reads 'MOD-INFO.txt' of the Mod's Folder
+- ---------- TOOL FUNCTIONS -------------
 - 🔒 Tamper-evident packaging
 - 🎲 Random prefix obfuscation (1024-8192 bytes)
 - 🔐 SHA-256 content verification
-- 💻 Windows installer & portable versions
-- 🖥️ Simple GUI interface
+- 🔏 Mutable Unique Header/Footer Signature
+- 💽 Rusted Warfare Readable File
+
 
 ## 📥 Pre-Built Downloads
 - 💽 RWMod Repacker Installer [Download Here (.msi)](https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/releases/program_installer/RWMod_Repacker_Setup.msi)
