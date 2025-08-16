@@ -1,12 +1,10 @@
 # ⚙️ RWMod Repacker 🛡️
+
 <div align="center">
 <img width="200" height="195" src="docs/lock.png" alt="Icon of the tool" title="Tool Icon">
 </div>
-# -A security-focused tool that packages the Rusted Warfare Mods into a protected `.rwmod` files with anti-tampering measures via obfuscation and 'dummying' method.
 
-
-
-
+## A security-focused tool that packages the Rusted Warfare Mods into a protected `.rwmod` files with anti-tampering measures via obfuscation and 'dummying' method.
 
 ## 📑 Table of Contents
 - [Protection Process](#%EF%B8%8F-protection-process-dummying-)
