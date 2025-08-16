@@ -188,16 +188,15 @@
         </div>
     </div>
 
-    <!-- Center Card: Usage GIF -->
-    <div class="features" style="margin:25px auto; display:inline-block;">
-        <h3 style="text-align:center;">Usage of the Tool</h3>
-        <img src="https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/docs/showcase.gif?raw=true"
-             alt="Usage GIF" style="max-width:100%; border-radius:8px;">
-        <div style="font-size:0.85em; color:#aaa; text-align:center;">(Live preview GIF)</div>
-    </div>
+    <!-- Middle Row: Usage GIF | Program UI -->
+    <div style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center; margin-top:25px;">
+        <div class="features" style="flex:1 1 300px;">
+            <h3>Usage of the Tool</h3>
+            <img src="https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/docs/showcase.gif?raw=true"
+                 alt="Usage GIF" style="max-width:100%; border-radius:8px;">
+            <div style="font-size:0.85em; color:#aaa; text-align:center;">(Live preview GIF)</div>
+        </div>
 
-    <!-- Bottom Row: Program UI | GIF Result -->
-    <div style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
         <div class="features" style="flex:1 1 300px;">
             <h3>User Interface of the Tool</h3>
             <a href="https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/docs/screenshot.PNG?raw=true" target="_blank">
@@ -206,12 +205,13 @@
             </a>
             <div style="font-size:0.85em; color:#aaa; margin-top:5px;">(Click to view full Program UI)</div>
         </div>
+    </div>
 
-        <div class="features" style="flex:1 1 300px;">
-            <h3>GIF Result</h3>
-            <img src="https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/docs/testing.gif?raw=true"
-                 alt="GIF Result" style="max-width:100%; border-radius:8px;">
-        </div>
+    <!-- Bottom Row: GIF Result -->
+    <div class="features" style="margin:25px auto; max-width:550px;">
+        <h3>GIF Result</h3>
+        <img src="https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/docs/testing.gif?raw=true"
+             alt="GIF Result" style="max-width:100%; border-radius:8px;">
     </div>
 </section>
 
@@ -248,6 +248,7 @@ fetch("https://api.github.com/repos/Moggle-Khraum/rwmod_repacker/issues?per_page
     list.innerHTML = "<li>Could not load issues</li>";
   });
 </script>
+
 
 	
 
