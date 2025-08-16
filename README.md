@@ -1,7 +1,7 @@
 # ⚙️ RWMod Repacker 🛡️
 
 ## 📑 Table of Contents
-- [Protection Process](#-protection-process)
+- [Protection Process](#%EF%B8%8F-protection-process-dummying-)
 - [Pre-Built Downloads](#-pre-built-downloads)
 - [For Paranoid Builders](#-for-paranoid-builders)
   - [Prerequisites](#prerequisites)
