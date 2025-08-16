@@ -1,7 +1,15 @@
 # ⚙️ RWMod Repacker 🛡️
+![RWMod Repacker Screenshot](https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/docs/favicon.ico)
+
+# A security-focused tool that packages the Rusted Warfare Mods into a protected `.rwmod` files with anti-tampering measures via obfuscation and 'dummying' method.
+
+
+
+
 
 ## 📑 Table of Contents
 - [Protection Process](#%EF%B8%8F-protection-process-dummying-)
+- [Features](#-features)
 - [Pre-Built Downloads](#-pre-built-downloads)
 - [For Paranoid Builders](#-for-paranoid-builders)
   - [Prerequisites](#prerequisites)
@@ -14,10 +22,6 @@
 - [Security Notes](#-security-notes)
 - [Troubleshooting](#-troubleshooting)
 - [Advanced](#advanced-)
-
-![RWMod Repacker Screenshot](screenshot.png)
-
-A security-focused tool that packages the Rusted Warfare Mods into a protected `.rwmod` files with anti-tampering measures via obfuscation and 'dummying' method.
 
 ## 🛡️ Protection Process (Dummying) 🔒
 
