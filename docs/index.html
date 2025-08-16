@@ -32,32 +32,15 @@
             color: #aaa;
         }
 
-        /* Side-by-side download boxes */
-        .download-row {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-            margin: 40px 0;
-            flex-wrap: wrap;
-        }
-
+        /* Button container */
         .download-box {
-            flex: 1;
-            min-width: 250px;
-            max-width: 350px;
             background: var(--card-bg);
             padding: 25px;
             border-radius: 8px;
             text-align: center;
             box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-        }
-
-        .or-divider {
-            color: var(--accent);
-            font-weight: bold;
-            font-size: 1.2em;
-            padding: 0 10px;
+            margin: 40px auto;
+            max-width: 550px;
         }
 
         /* Buttons */
@@ -69,7 +52,7 @@
             text-decoration: none;
             font-weight: bold;
             border-radius: 4px;
-            margin: 10px 0;
+            margin: 10px;
             transition: all 0.3s ease;
         }
 
@@ -90,7 +73,7 @@
         .checksum {
             font-family: monospace;
             font-size: 0.9em;
-            margin-top: 15px;
+            margin-top: 5px;
             color: #aaa;
         }
 
@@ -125,23 +108,11 @@
             left: 0;
         }
 
-        /* Footer */
         footer {
             text-align: center;
             margin-top: 50px;
             color: #777;
             font-size: 0.9em;
-        }
-
-        /* Responsive - stack on mobile */
-        @media (max-width: 700px) {
-            .download-row {
-                flex-direction: column;
-                gap: 5px;
-            }
-            .or-divider {
-                margin: 10px 0;
-            }
         }
     </style>
 </head>
@@ -153,30 +124,21 @@
     </header>
 
     <main>
-        <!-- Side-by-side download boxes -->
-        <div class="download-row">
-            <!-- Installer Box -->
-            <div class="download-box">
-                <h2>Download Installer</h2>
-                <a href="https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/releases/program_installer/RWMod_Repacker_Setup.msi" 
+        <!-- Combined Download Box -->
+        <div class="download-box">
+            <h2>Choose what version to download</h2>
+            <div style="display:flex; justify-content:center; gap:15px; flex-wrap:wrap;">
+                <a href="https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/releases/program_installer/RWMod_Repacker_Setup.msi"
                    class="download-btn">
-                   Installer (v1.3.0)
+                    Installer (v1.3.0)
                 </a>
-                <div class="checksum">SHA256: [MSI_HASH]</div>
-            </div>
-
-            <!-- Centered "OR" -->
-            <div class="or-divider">OR</div>
-
-            <!-- Portable Box -->
-            <div class="download-box">
-                <h2>Download Portable</h2>
-                <a href="https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/releases/portable_zips/RWMod_repacker_v1.3.zip" 
+                <a href="https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/releases/portable_zips/RWMod_repacker_v1.3.zip"
                    class="download-btn alt">
-                   Portable (v1.3.0)
+                    Portable (v1.3.0)
                 </a>
-                <div class="checksum">SHA256: [ZIP_HASH]</div>
             </div>
+            <div class="checksum">Installer SHA256: [MSI_HASH]</div>
+            <div class="checksum">Portable SHA256: [ZIP_HASH]</div>
         </div>
 
         <section class="features">
