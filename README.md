@@ -1,7 +1,7 @@
 # ⚙️ RWMod Repacker 🛡️
 
 ## 📑 Table of Contents
-
+- [Protection Process](#-protection-process)
 - [Pre-Built Downloads](#-pre-built-downloads)
 - [For Paranoid Builders](#-for-paranoid-builders)
   - [Prerequisites](#prerequisites)
@@ -17,7 +17,31 @@
 
 ![RWMod Repacker Screenshot](screenshot.png)
 
-A security-focused tool that packages game mods into protected `.rwmod` files with anti-tampering measures.
+A security-focused tool that packages the Rusted Warfare Mods into a protected `.rwmod` files with anti-tampering measures via obfuscation and 'dummying' method.
+
+## 🛡️ Protection Process (Dummying) 🔒
+
+The RWMod Repacker uses a multi-layered "dummying" technique to protect mod files:
+
+```
+1. [DUMMY CREATION]  
+   │─ Generates a "dummy shell" with:  
+   │  • Random prefix (1024-8192 bytes)  
+   │  • Fake PNG header signature  
+   │  • Placeholder hash blocks  
+
+2. [REAL FILE INSERTION]  
+   │─ Encapsulates the actual mod files in:  
+   │  • Standard ZIP (unmodified contents)  
+   │  • SHA-256 content verification hash  
+   │  • Custom footer signature  
+
+3. [PROTECTION LAYERS]  
+   │─ Final protected .rwmod contains:  
+   │  • Obfuscated size/offset data  
+   │  • Mutating signatures (changes per build)  
+   │  • Dead byte padding (anti-tamper noise)  
+```
 
 ## Features
 - 🔒 Tamper-evident packaging
@@ -27,8 +51,8 @@ A security-focused tool that packages game mods into protected `.rwmod` files wi
 - 🖥️ Simple GUI interface
 
 ## 📥 Pre-Built Downloads
-- 💽 [Installer (.msi)](https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/releases/program_installer/RWMod_Repacker_Setup.msi)
-- 🧰 [Portable (.zip)](https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/releases/portable_zips/RWMod_repacker_v1.3.zip)
+- 💽 RWMod Repacker Installer [Download Here (.msi)](https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/releases/program_installer/RWMod_Repacker_Setup.msi)
+- 🧰 RWMod Repacker Portable [Downlaod Here (.zip)](https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/releases/portable_zips/RWMod_repacker_v1.3.zip)
 
 ## 🔨 For Paranoid Builders
 Build your own executable to verify the code:
