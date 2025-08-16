@@ -4,50 +4,205 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RWMod Repacker - Secure Mod Packaging</title>
-    <link rel="stylesheet" href="style.css">
+    <style>
+        :root {
+            --bg: #1a1a1a;
+            --text: #e0e0e0;
+            --accent: #00cc88;
+            --card-bg: #2d2d2d;
+        }
+
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        header p {
+            margin: 5px 0;
+            color: #aaa;
+        }
+
+        /* Download Section */
+        .download-options {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 5px;
+            margin: 40px 0;
+        }
+
+        .download-box {
+            width: 100%;
+            max-width: 500px;
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+
+        .divider {
+            margin: 10px 0;
+            width: 100%;
+            text-align: center;
+            position: relative;
+            color: var(--accent);
+            font-weight: bold;
+        }
+
+        .divider span {
+            background: var(--bg);
+            padding: 0 15px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .divider::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: var(--accent);
+            z-index: 0;
+        }
+
+        /* Buttons */
+        .download-btn {
+            display: inline-block;
+            background: var(--accent);
+            color: #000;
+            padding: 12px 24px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            margin: 10px 0;
+            transition: all 0.3s ease;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 12px rgba(0,204,136,0.3);
+        }
+
+        .download-btn.alt {
+            background: #444;
+            color: white;
+        }
+
+        .download-btn.alt:hover {
+            background: #555;
+        }
+
+        .checksum {
+            font-family: monospace;
+            font-size: 0.9em;
+            margin-top: 15px;
+            color: #aaa;
+        }
+
+        /* Features Section */
+        .features {
+            background: var(--card-bg);
+            padding: 25px;
+            border-radius: 8px;
+            max-width: 500px;
+            margin: 40px auto;
+        }
+
+        .features h3 {
+            margin-top: 0;
+            color: var(--accent);
+        }
+
+        .features ul {
+            padding-left: 20px;
+        }
+
+        .features li {
+            margin: 10px 0;
+            list-style-type: none;
+            position: relative;
+            padding-left: 30px;
+        }
+
+        .features li::before {
+            content: "✅";
+            position: absolute;
+            left: 0;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            color: #777;
+            font-size: 0.9em;
+        }
+
+        /* Responsive */
+        @media (max-width: 600px) {
+            .download-box {
+                padding: 20px 15px;
+            }
+            .features {
+                padding: 20px;
+            }
+        }
+    </style>
 </head>
 <body>
     <header>
         <h1>RWMod Repacker</h1>
         <p>Protect your .rwmod from being casually stolen</p>
-		<p>Effective on mods played in mobile</p>
+        <p>Effective on mods played in mobile</p>
     </header>
 
     <main>
-<section class="download-options">
-    <!-- Installer Box -->
-    <div class="download-box">
-        <h2>Download Installer</h2>
-        <a href="https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/releases/program_installer/RWMod_Repacker_Setup.msi" 
-           class="download-btn">
-           Installer (v1.3.0)
-        </a>
-        <div class="checksum">SHA256: [MSI_HASH]</div>
-    </div>
+        <section class="download-options">
+            <!-- Installer Box -->
+            <div class="download-box">
+                <h2>Download Installer</h2>
+                <a href="https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/releases/program_installer/RWMod_Repacker_Setup.msi" 
+                   class="download-btn">
+                   Installer (v1.3.0)
+                </a>
+                <div class="checksum">SHA256: [MSI_HASH]</div>
+            </div>
 
-    <!-- Divider -->
-    <div class="divider">
-        <span><center>OR</center></span>
-    </div>
+            <!-- Divider -->
+            <div class="divider">
+                <span>OR</span>
+            </div>
 
-    <!-- Portable Box -->
-    <div class="download-box">
-        <h2>Download Portable</h2>
-        <a href="https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/releases/portable_zips/RWMod_repacker_v1.3.zip" 
-           class="download-btn alt">
-           Portable (v1.3.0)
-        </a>
-        <div class="checksum">SHA256: [ZIP_HASH]</div>
-    </div>
-</section>
-
+            <!-- Portable Box -->
+            <div class="download-box">
+                <h2>Download Portable</h2>
+                <a href="https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/releases/portable_zips/RWMod_repacker_v1.3.zip" 
+                   class="download-btn alt">
+                   Portable (v1.3.0)
+                </a>
+                <div class="checksum">SHA256: [ZIP_HASH]</div>
+            </div>
+        </section>
 
         <section class="features">
             <h3>Key Features</h3>
             <ul>
-                <li>✅ Tamper-proof .rwmod packaging</li>
-                <li>✅ Offset obfuscation</li>
-                <li>✅ One-click installer</li>
+                <li>Tamper-proof .rwmod packaging</li>
+                <li>Offset obfuscation</li>
+                <li>One-click installer</li>
             </ul>
         </section>
     </main>
