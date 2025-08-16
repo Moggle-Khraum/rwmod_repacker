@@ -1,6 +1,6 @@
 # ⚙️ RWMod Repacker 🛡️
 <div align="center">
-  <img src="https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/docs/lock.png" width="85%" alt="RWMod Repacker Protection Screenshot">
+  <img src="https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/docs/lock.png" width="85%" max-width:400px max-length:400px alt="RWMod Repacker Protection Screenshot">
 </div>
 
 # A security-focused tool that packages the Rusted Warfare Mods into a protected `.rwmod` files with anti-tampering measures via obfuscation and 'dummying' method.
