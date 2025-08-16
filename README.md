@@ -1,4 +1,21 @@
-# RWMod Repacker 🛡️
+# ⚙️ RWMod Repacker 🛡️
+
+## 📑 Table of Contents
+- [Features](#-features)
+- [Pre-Built Downloads](#-pre-built-downloads)
+- [For Paranoid Builders](#-for-paranoid-builders)
+  - [Prerequisites](#prerequisites)
+  - [Clone & Prepare](#1-clone--prepare)
+  - [Customize Build](#2-customize-build)
+  - [Build Options](#3-build-options)
+  - [Expected Warnings](#4-expected-warnings-safe-to-ignore)
+  - [Clean & Rebuild](#5-clean--rebuild)
+- [Testing Your Build](#-testing-your-build)
+- [Security Notes](#-security-notes)
+- [Troubleshooting](#-troubleshooting)
+- [Advanced](#-advanced)
+
+
 
 ![RWMod Repacker Screenshot](screenshot.png)
 
