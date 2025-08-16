@@ -1,7 +1,7 @@
 # ⚙️ RWMod Repacker 🛡️
 
 ## 📑 Table of Contents
-- [Features](#-features)
+
 - [Pre-Built Downloads](#-pre-built-downloads)
 - [For Paranoid Builders](#-for-paranoid-builders)
   - [Prerequisites](#prerequisites)
@@ -27,8 +27,8 @@ A security-focused tool that packages game mods into protected `.rwmod` files wi
 - 🖥️ Simple GUI interface
 
 ## 📥 Pre-Built Downloads
-- [Installer (.msi)](https://github.com/yourrepo/releases/latest)
-- [Portable (.zip)](https://github.com/yourrepo/releases/latest)
+- 💽 [Installer (.msi)](https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/releases/program_installer/RWMod_Repacker_Setup.msi)
+- 🧰 [Portable (.zip)](https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/releases/portable_zips/RWMod_repacker_v1.3.zip)
 
 ## 🔨 For Paranoid Builders
 Build your own executable to verify the code:
