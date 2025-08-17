@@ -13,10 +13,9 @@ build_exe_options = {
 
 setup(
     name="RWMod Repacker",
-    version="1.3.0",
+    version="1.3.1",
     description="Package RW mods with anti-theft protection",
     author="Moggstone",  # This becomes the "Publisher" in Add/Remove Programs
-    url="https://example.com",
     options={
         "build_exe": build_exe_options,
         "bdist_msi": {
@@ -48,7 +47,7 @@ setup(
         icon="app_icon.ico",
         target_name="RWMod_Repacker.exe",
         # Additional metadata that shows in file properties:
-        copyright="Copyright © 2023 Moggstone",
+        copyright="Copyright © 2025 Moggstone",
         
     )]
 )

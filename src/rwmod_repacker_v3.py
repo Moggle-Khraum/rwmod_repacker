@@ -498,7 +498,7 @@ status_label = tk.Label(root, text="READY and WAITING...", fg="white", bg="#1e1e
 status_label.pack(pady=(0, 5))
 
 # About button
-btn_about = ttk.Button(root, text="About", command=show_about)
+btn_about = ttk.Button(root, text="📝 About", command=show_about)
 btn_about.pack(side="bottom", pady=5)
 
 #About History Log
