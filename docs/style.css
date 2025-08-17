@@ -50,6 +50,7 @@ header {
     background: var(--card-bg);
     padding: 25px;
     border-radius: 8px;
+	content: ✅;
     max-width: 900px;
     margin: 40px auto;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
@@ -61,6 +62,7 @@ header {
     padding: 12px 24px;
     margin: 10px;
     color: #000;
+	content: 📦;
     text-decoration: none;
     border-radius: 4px;
     font-weight: bold;
@@ -79,6 +81,7 @@ header {
     position: absolute;
     top: -10px;
     right: -10px;
+	content:🥇;
     background: #ff5050;
     padding: 4px 6px;
     color: #fff;
