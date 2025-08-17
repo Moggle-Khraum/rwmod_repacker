@@ -47,14 +47,42 @@ header {
 
 .download-box,
 .features {
-    background: var(--card-bg);
+	background: var(--card-bg);
     padding: 25px;
-    border-radius: 8px;
-	content: ✅;
-    max-width: 900px;
-    margin: 40px auto;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+	border-radius: 8px;
+	max-width: 720px;
+	margin: 40px auto;
 }
+
+.features h3 {
+	margin-top: 0;
+	color: var(--accent);
+}
+
+.features li {
+	margin: 10px 0;
+	list-style-type: none;
+	position: relative;
+	padding-left: 30px;
+}
+
+.features li::before {
+	content: "✅";
+	position: absolute;
+	left: 0;
+}
+
+
+
+
+
+
+
+
+
+
+
+
 
 .download-btn {
     display: inline-block;
