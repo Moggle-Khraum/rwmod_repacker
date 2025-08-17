@@ -5,8 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RWMod Repacker - Secure Mod Packaging</title>
-	<link rel="icon" href="https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/docs/favicon.ico?raw=true" type="image/x-icon">
-	
+    <link rel="icon" href="https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/docs/favicon.ico?raw=true"
+          type="image/x-icon">
     <style>
         :root {
             --bg: #1a1a1a;
@@ -19,13 +19,11 @@
             font-family: 'Segoe UI', sans-serif;
             background: var(--bg);
             color: var(--text);
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
+            margin: 0;
             line-height: 1.6;
         }
-		
-		/* NAVBAR */
+
+        /* NAVBAR */
         .navbar {
             position: sticky;
             top: 0;
@@ -36,8 +34,8 @@
             box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
             text-align: center;
         }
-		
-		.navbar a {
+
+        .navbar a {
             color: var(--accent);
             margin: 0 15px;
             text-decoration: none;
@@ -47,52 +45,44 @@
         .navbar a:hover {
             text-decoration: underline;
         }
-		
+
         header {
             text-align: center;
-            margin-bottom: 40px;
+            padding: 50px 20px 20px;
+            max-width: 900px;
+            margin: auto;
         }
 
-        header p {
-            margin: 5px 0;
-            color: #aaa;
-        }
-		
-		
-		
-		
-
-        .download-box {
+        .download-box,
+        .features {
             background: var(--card-bg);
             padding: 25px;
             border-radius: 8px;
-            text-align: center;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            max-width: 900px;
             margin: 40px auto;
-            max-width: 550px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
         .download-btn {
             display: inline-block;
             background: var(--accent);
-            color: #000;
             padding: 12px 24px;
-            text-decoration: none;
-            font-weight: bold;
-            border-radius: 4px;
             margin: 10px;
-            transition: all 0.3s ease;
+            color: #000;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: bold;
+            transition: 0.3s;
             position: relative;
-        }
-
-        .download-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(0, 204, 136, 0.3);
         }
 
         .download-btn.alt {
             background: #444;
-            color: #fff;
+            color: white;
+        }
+
+        .download-btn:hover {
+            transform: translateY(-2px);
         }
 
         .badge {
@@ -106,53 +96,13 @@
             border-radius: 20px;
         }
 
-        .checksum {
-            font-family: monospace;
-            font-size: 0.9em;
-            margin-top: 5px;
-            color: #aaa;
-        }
-
-        .features {
-            background: var(--card-bg);
-            padding: 25px;
-            border-radius: 8px;
-            max-width: 720px;
-            margin: 40px auto;
-        }
-
-        .features h3 {
-            margin-top: 0;
-            color: var(--accent);
-        }
-
-        .features li {
-            margin: 10px 0;
-            list-style-type: none;
-            position: relative;
-            padding-left: 30px;
-        }
-
-        .features li::before {
-            content: "✅";
-            position: absolute;
-            left: 0;
-        }
-
         footer {
             text-align: center;
-            margin-top: 50px;
             color: #777;
-            font-size: 0.9em;
+            margin: 60px 0 20px;
         }
 
-        .link-row a {
-            color: var(--accent);
-            margin-right: 15px;
-            text-decoration: none;
-        }
-		
-		/* MODAL */
+        /* MODAL */
         #changelogModal {
             display: none;
             position: fixed;
@@ -183,10 +133,6 @@
             cursor: pointer;
             color: var(--accent);
         }
-		
-		
-		
-		
     </style>
 </head>
 
@@ -207,7 +153,6 @@
 </header>
 
 <main>
-    <!-- Combined Download Box -->
     <!-- DOWNLOAD SECTION -->
     <div class="download-box">
         <h2><center>About the Tool:</center></h2>
@@ -224,10 +169,8 @@
 			<a href="downloads.html">See Download Page →</a>
             </div>
 		</div>
-	</div>
-
-    <section>
-    <!-- Top Row: Key Features | Issues -->
+		
+    <!-- FEATURES + ISSUES -->
     <div style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
         <div class="features" style="flex:1 1 300px;">
             <h3>Key Features:</h3>
@@ -235,54 +178,73 @@
                 <li>Tamper-proof .RWMOD File</li>
                 <li>Obfuscated Package</li>
                 <li>Fully Functional .RWMOD File</li>
-				<li>100% READABLE and PLAYABLE</li>
+                <li>100% READABLE and PLAYABLE</li>
             </ul>
         </div>
-
         <div class="features" style="flex:1 1 300px;">
-            <h3>Issues:</h3>
-            <ul id="issues-list" style="margin:0; padding-left:18px; font-size:0.9em;"></ul>
+            <h3>Issues</h3>
+            <ul id="issues-list" style="margin:0;padding-left:18px;font-size:0.9em;"></ul>
         </div>
 		<div class="features" style="flex:1 1 300px;">
-			<h3>Changelog:</h3>
-			<ul>
-				<li><strong>v1.3.1</strong> – Improved the tampering function</li>
-				<li><strong>v1.3.0</strong> – Initial public release</li>
-				<li><strong>v1.2.5</strong> – Installer & Portable Created</li>
-				<li><strong>v1.2.0</strong> – Second Build Created</li>
-				<li><strong>v1.1.0</strong> – First Build Created</li>
-			</ul>
-		</div>
+			<h3> 
+		
+		
+		
     </div>
 
-    <!-- Middle Row: Usage GIF | Program UI -->
-    <div style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center; margin-top:25px;">
+    <!-- GIF CARDS -->
+    <div style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center;margin-top:25px;">
         <div class="features" style="flex:1 1 300px;">
-            <h3><center>Usage of the Tool:</center></h3>
+            <h3>Usage of the Tool:</h3>
             <img src="https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/docs/showcase.gif?raw=true"
-                 alt="Usage GIF" style="max-width:100%; border-radius:8px;">
-            <div style="font-size:0.85em; color:#aaa; text-align:center;">(Live preview GIF)</div>
+                 style="max-width:100%;border-radius:8px;">
         </div>
-
         <div class="features" style="flex:1 1 300px;">
-            <h3><center>User Interface of the Tool:</center></h3>
+            <h3>User Interface of the Tool:</h3>
             <a href="https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/docs/screenshot.PNG?raw=true" target="_blank">
                 <img src="https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/docs/screenshot.PNG?raw=true"
-                     alt="Program UI Screenshot" style="max-width:100%; border-radius:8px;">
+                     style="max-width:100%;border-radius:8px;">
             </a>
-            <div style="font-size:0.85em; color:#aaa; margin-top:5px;text-align:center;">(Click to view full Program UI)</div>
         </div>
     </div>
 
+    
+</main>
 
+<footer>
+    <p>© 2025 Moggstone | Built with Github Pages</p>
+</footer>
+
+<!-- CHANGELOG MODAL -->
+<div id="changelogModal">
+    <div class="modal-content">
+        <span id="closeModal">&times;</span>
+        <h3>Changelog</h3>
+        <ul>
+			<li><strong>v1.3.1</strong> - Improved the tool for PC Mods
+            <li><strong>v1.3.0</strong> – Initial public release</li>
+            <li><strong>v1.2.0</strong> – Improved the tampering function</li>
+            <li><strong>v1.1.0</strong> – Improved header obfuscation</li>
+        </ul>
+    </div>
 </div>
 
-</section>
-
 <script>
+function openModal() {
+    document.getElementById("changelogModal").style.display = "block";
+}
+document.getElementById("closeModal").onclick = function () {
+    document.getElementById("changelogModal").style.display = "none";
+};
+window.onclick = function (e) {
+    if (e.target == document.getElementById("changelogModal")) {
+        document.getElementById("changelogModal").style.display = "none";
+    }
+};
+
+// ISSUES FETCH
 const list = document.getElementById("issues-list");
 list.innerHTML = "<li>Loading issues…</li>";
-
 fetch("https://api.github.com/repos/Moggle-Khraum/rwmod_repacker/issues?per_page=5&state=open")
   .then(res => res.json())
   .then(data => {
@@ -293,32 +255,27 @@ fetch("https://api.github.com/repos/Moggle-Khraum/rwmod_repacker/issues?per_page
       data.forEach(issue => {
         const li = document.createElement("li");
         li.innerHTML =
-          `<a href="${issue.html_url}" target="_blank" style="color:var(--accent); text-decoration:none;">
-            #${issue.number} – ${issue.title}
-          </a>`;
+          `<a href="${issue.html_url}" target="_blank" style="color:var(--accent);text-decoration:none;">#${issue.number} – ${issue.title}</a>`;
         list.appendChild(li);
       });
     }
-
     const footerLi = document.createElement("li");
     footerLi.style.listStyle = "none";
     footerLi.style.marginTop = "4px";
     footerLi.innerHTML =
       `<a href="https://github.com/Moggle-Khraum/rwmod_repacker/issues" target="_blank"
-        style="color:var(--accent); text-decoration:none; font-weight:bold;">View all →</a>`;
+        style="color:var(--accent);text-decoration:none;font-weight:bold;">View all →</a>`;
     list.appendChild(footerLi);
   })
-  .catch(() => {
-    list.innerHTML = "<li>Could not load issues</li>";
-  });
-  
-  // BACK TO TOP
-	window.addEventListener('scroll', () => {
-		const btn = document.getElementById('backToTop');
-		btn.style.display = (document.documentElement.scrollTop > 300) ? 'block' : 'none';
-  });
+  .catch(() => { list.innerHTML = "<li>Could not load issues</li>"; });
 
+// BACK TO TOP
+window.addEventListener('scroll', () => {
+    const btn = document.getElementById('backToTop');
+    btn.style.display = (document.documentElement.scrollTop > 300) ? 'block' : 'none';
+});
 </script>
+
 <!-- Floating Back To Top -->
 <button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" style="
     position: fixed;
@@ -336,18 +293,6 @@ fetch("https://api.github.com/repos/Moggle-Khraum/rwmod_repacker/issues?per_page
     <img src="https://imgs.search.brave.com/fo2Ra4vKUJUG7DiojvbI4NWfEHjBYiosO4yA1J2CJLA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91eHdp/bmcuY29tL3dwLWNv/bnRlbnQvdGhlbWVz/L3V4d2luZy9kb3du/bG9hZC9hcnJvdy1k/aXJlY3Rpb24vYXJy/b3ctdG9wLWRpcmVj/dGlvbi1yZWQtaWNv/bi5zdmc"
          style="width:20px;height:20px;">
 </button>
-</main>
-
-<div style="text-align:center; margin-top:40px;">
-    <a href="https://github.com/Moggle-Khraum/rwmod_repacker" target="_blank"
-       style="background:var(--accent); color:black; padding:12px 24px; font-weight:bold; border-radius:6px; text-decoration:none;">
-        View README / Documentation
-    </a>
-</div>
-
-<footer>
-    <p>© 2025 Moggstone | Built with Github Pages</p>
-</footer>
 
 </body>
 </html>
