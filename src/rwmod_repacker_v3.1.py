@@ -63,6 +63,7 @@ def hide_files_in_folder(folder_path):
             for file in files:
                 os.system(f'attrib +h "{os.path.join(root, file)}"')
 
+# Creates a DECOY and SHELL
 def create_protected_archive(source_folder, output_zip):
     """Creates archive with hidden files + decoy."""
     with zipfile.ZipFile(output_zip, 'w', zipfile.ZIP_DEFLATED) as zipf:
@@ -92,7 +93,7 @@ def get_secret_key():
     # Mutable HEX Key
     return mutable_hex_key(2023) + b"_MODSEC_" + mutable_hex_key(os.getpid())
 
-
+# ZIPPS the Folder, Ready for PACKING
 def zip_folder(folder_path, zip_path):
     update_status("⏳ ARCHIVING FILES...")
     with zipfile.ZipFile(zip_path, 'w', zipfile.ZIP_DEFLATED) as zf:
@@ -102,6 +103,7 @@ def zip_folder(folder_path, zip_path):
                 rel_path = os.path.relpath(abs_path, folder_path)
                 zf.write(abs_path, rel_path)
 
+# Tamper the Temp ZIP with STUFFS
 def tamper_zip(zip_path, rwmod_path, prefix_len_range=(1024, 8192)):
     """Offset-shift ZIP with random prefix and append hash+footer+size."""
     update_status("🔐 ADDING OBFUSCATION LAYER...")
@@ -123,6 +125,7 @@ def tamper_zip(zip_path, rwmod_path, prefix_len_range=(1024, 8192)):
 
     os.remove(zip_path)
 
+# Verifies the Integrity of ZIP File
 def verify_rwmod_integrity(file_path):
     """Verifies .rwmod integrity."""
     try:
@@ -164,6 +167,7 @@ def unhide_files_in_folder(folder_path):
 def pack_as_rwmod(folder_path, rwmod_path):
     """Main packing process with auto-hidden files."""
     temp_zip = rwmod_path + ".temp.zip"
+    success = False # Flag to track completion
 
     try:
         # 1. Hide original files (Windows only)
@@ -175,13 +179,26 @@ def pack_as_rwmod(folder_path, rwmod_path):
         update_status("💼 ADDING PROTECTIVE LAYER...")
         create_protected_archive(folder_path, temp_zip)
         tamper_zip(temp_zip, rwmod_path)
+
+        # 3. Immediate checksum test for corrupted file
+        if not verify_checksum(rwmod_path)
+            raise RuntimeError("Checksum mismatch - file corrupted during creation")
     
-        # 3. Verify Package
+        # 4. Verify Package Structure
         update_status("♻️ VERIFYING PACKAGE...")
         is_valid, msg = verify_rwmod_integrity(rwmod_path)
         if not is_valid:
             os.remove(rwmod_path)
             raise RuntimeError(f"⚠️ VERIFICATION FAILED: {msg}")
+
+        success = True # Mark as Successful
+
+    # only executed if corrupt file exists
+    except Exception as e:
+        # Delete corrupted output if exists
+        if os.path.exists(rwmod_path):
+            os.remove(remove_path)
+        raise # Re-raise the exception
 
     finally:
         # 4. Revert Attributes
@@ -190,10 +207,53 @@ def pack_as_rwmod(folder_path, rwmod_path):
         # 5. Cleanup Temp File
         if os.path.exists(temp_zip):
             os.remove(temp_zip)
-        
+        # 6. Final Safey Check
+        if not success and os.path.exists(rwmod_path):
+            os.remove(rwmod_path)
+            #Final safety check if not Successfully deleted
+
+    # Updates Label Status   
     update_status("🔒 ARCHIVE PROTECTION APPLIED")
     time.sleep(2.5)
 
+# Helper function for detecting corrupted file
+def verify_checksum(file_path):
+    """Validates the RWMod file with size and hash checks"""
+    try:
+        # Read full file
+        with open(file_path, 'rb') as f:
+            data = f.read()
+        
+        # Parse structure
+        footer_sig = get_footer_sig()
+        zip_size = int.from_bytes(data[-4:], 'big')
+        footer_len = len(footer_sig)
+        
+        # Calculate positions
+        hash_start = -(footer_len + 4 + 32)
+        zip_start = hash_start - zip_size
+        
+        # Safety checks
+        if len(data) < abs(zip_start):
+            raise RuntimeError(f"File too small ({len(data)} bytes) for declared size {zip_size}")
+        
+        # Extract payload
+        actual_data = data[zip_start : hash_start]
+        
+        # Size verification
+        if len(actual_data) != zip_size:
+            raise RuntimeError(
+                f"Size mismatch at 0x{zip_start:X}-0x{hash_start:X}: "
+                f"expected {zip_size} bytes, got {len(actual_data)}"
+            )
+        
+        # Hash verification
+        stored_hash = data[hash_start : hash_start+32]
+        return hashlib.sha256(actual_data).digest() == stored_hash
+        
+    except Exception as e:
+        print(f"[DEBUG] Verification failed for {file_path}: {str(e)}")
+        return False
 
 
 # GUI Functions
@@ -201,6 +261,7 @@ def update_status(msg):
     status_label.config(text=msg)
     status_label.update()
 
+# Selects MOD Folder
 def select_folder():
     folder = filedialog.askdirectory()
     if folder:
@@ -220,15 +281,20 @@ def select_folder():
             modinfo_text.delete('1.0', tk.END)
             modinfo_text.insert(tk.END, "📜 No mod-info.txt found.")
 
+# Selects Output Folder
 def select_output():
     output = filedialog.askdirectory()
     if output:
         output_entry.delete(0, tk.END)
         output_entry.insert(0, output)
 
+
+# Boolean State: Enable/Disable
 def set_pack_button_state(enabled: bool):
     pack_button.config(state="normal" if enabled else "disabled")
 
+
+# Runs the Packing Process
 def run_packing():
     set_pack_button_state(False)
     try:
@@ -243,8 +309,11 @@ def run_packing():
         modname = os.path.basename(folder_path.rstrip("/\\"))
         rwmod_path = os.path.join(output_dir, modname + ".rwmod")
 
+        # ====== MAIN PACKING OPERATION ======
         pack_as_rwmod(folder_path, rwmod_path)
+        # ====================================
 
+        # Verify the output file
         checksum_valid = False
         try:
             sha256 = calculate_sha256(rwmod_path)
@@ -253,25 +322,54 @@ def run_packing():
         except:
             checksum_valid = False
 
+        # Only reaches here if successful
         add_to_log(modname, rwmod_path)
         update_status("✅ SUCCESS!")
         messagebox.showinfo("DONE", f"📦 PACKED TO:\n{rwmod_path}")
 
+    except Exception as e:
+        # ================== ENHANCED ERROR HANDLER  ================
+        update_status("❌ FAILED")
+        
+        if "checksum" in str(e).lower() or "corrupt" in str(e).lower():
+            msg = f"🚨 FILE CORRUPTION:\n\n{str(e)}"
+        elif "size mismatch" in str(e).lower():
+            msg = f"📏 SIZE MISMATCH:\n\n{str(e)}"
+        else:
+            msg = f"❌ ERROR:\n\n{str(e)}"
+        
+        messagebox.showerror("Packing Error",
+                           f"{msg}\n\n"
+                           "🛑 No .rwmod file was created or it was deleted.\n"
+                           "🔧 Please check your source files and try again.")
+        # ============================================================
+
+    finally:
+        # Cleanup UI
         folder_entry.delete(0, tk.END)
         output_entry.delete(0, tk.END)
         folder_name.set("🗂 FOLDER: (NONE)")
         modinfo_text.delete('1.0', tk.END)
+        set_pack_button_state(True)
         update_status("⚙ READY and WAITING...")
 
-    except Exception as e:
-        update_status("❌ FAILED.")
-        messagebox.showerror("Error", str(e))
-    finally:
-        set_pack_button_state(True)
 
+# Calculate the SHA256
+def calculate_sha256(file_path):
+    sha256 = hashlib.sha256()
+    with open(file_path, "rb") as f:
+        for chunk in iter(lambda: f.read(4096), b""):
+            sha256.update(chunk)
+    return sha256.hexdigest()
+
+# Start Threading with error handling:
 def start_thread():
-    threading.Thread(target=run_packing, daemon=True).start()
+    try:
+        threading.Thread(target=run_packing, daemon=True).start()
+    except RuntimeError as e:  # Handle thread spawn failures
+        messagebox.showerror("🚨 Thread Error", f"Couldn't start packing thread:\n{e}")
 
+# Show History Popup
 def show_history_popup():
     """Displays history from persistent file."""
     history = load_history()
@@ -288,6 +386,7 @@ def show_history_popup():
     content = "=== Packing History ===\n\n" + "\n".join(formatted) if formatted else "📜 No history found."
     show_text_popup("History Log", content)
 
+# Default Text Popup for Errors and Popups
 def show_text_popup(title, content):
     popup = tk.Toplevel(root)
     popup.title(title)
