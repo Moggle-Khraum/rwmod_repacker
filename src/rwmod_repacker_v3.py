@@ -40,6 +40,7 @@ def generate_footer_signature():
 def add_junk_trailing(data: bytes, junk_len=32) -> bytes:
     return data + os.urandom(junk_len)
 
+
 def create_zipinfo_with_new_size(original_info, new_size):
     zi = zipfile.ZipInfo(filename=original_info.filename)
     zi.date_time = original_info.date_time if hasattr(original_info, "date_time") else time.localtime()[:6]
