@@ -1638,7 +1638,7 @@ def show_about():
 root = tk.Tk()
 root.title("RWMod Anti-Theft Repacker v.1.3.5")
 root.iconbitmap(ICON_PATH['ico'])
-root.geometry("550x750")
+root.geometry("550x690")
 root.configure(bg="#1e1e1e")
 root.resizable(False, False)
 
@@ -1646,7 +1646,7 @@ root.resizable(False, False)
 history_log = load_history()
 
 # Main UI Elements
-tk.Label(root, text="RWMod Anti-Theft Repacker", font=("Arial", 18, "bold"), fg="#00ff88", bg="#1e1e1e").pack(pady=(10, 10))
+tk.Label(root, text="RWMod Anti-Theft Repacker 1.3.5", font=("Arial", 18, "bold"), fg="#00ff88", bg="#1e1e1e").pack(pady=(10, 10))
 
 # Folder Selection
 mod_row = tk.Frame(root, bg="#1e1e1e")
@@ -1684,45 +1684,87 @@ modinfo_text.pack(fill="both", expand=False, padx=10, pady=(0, 10))
 progress_frame = tk.Frame(root, bg="#1e1e1e")
 progress_frame.pack(fill="x", padx=10, pady=10)
 
-# Left Column: Process Bars
+# Left Column: Sequence Status Queue
 left_frame = tk.Frame(progress_frame, bg="#1e1e1e")
 left_frame.grid(row=0, column=0, sticky="nsew", padx=(0, 20))
 
-tk.Label(left_frame, text="SEQUENCE STATUS QUEUE:", font=("Arial", 11, "bold"), fg="white", bg="#1e1e1e").pack(anchor="w")
+tk.Label(left_frame, text="📜 SEQUENCE STATUS QUEUE:", font=("Arial", 11, "bold"),
+         fg="white", bg="#1e1e1e").pack(anchor="w", pady=(0, 10))
 
-# Overall progress
+# Example: Overall progress bar
 tk.Label(left_frame, text="OVERALL STATUS:", fg="white", bg="#1e1e1e").pack(anchor="w")
 progress_bar = ttk.Progressbar(left_frame, mode="determinate", length=250)
 progress_bar.pack(pady=(0, 10))
 
-# Archiving progress
 tk.Label(left_frame, text="ARCHIVING STATUS:", fg="white", bg="#1e1e1e").pack(anchor="w")
 progress_zip = ttk.Progressbar(left_frame, mode="determinate", length=250)
 progress_zip.pack(pady=(0, 10))
 
-# Obfuscation progress
 tk.Label(left_frame, text="OBFUSCATION STATUS:", fg="white", bg="#1e1e1e").pack(anchor="w")
 progress_rwmod = ttk.Progressbar(left_frame, mode="determinate", length=250)
-progress_rwmod.pack(pady=(0, 10))
+progress_rwmod.pack(pady=(0, 15))
 
-# Right Column: Settings
+status_label = tk.Label(
+    left_frame,
+    text="⚙ READY and WAITING...",
+    fg="white",
+    bg="#1e1e1e",
+    font=("Arial", 13, "bold")
+).pack(anchor="center", pady=(0, 10))  # Title centered
+
+# Separator line (now in its own column)
+separator = ttk.Separator(progress_frame, orient="vertical")
+separator.grid(row=0, column=2, sticky="ns", padx=12)
+
+# Spacer column (empty frame)
+spacer = tk.Frame(progress_frame, width=15, bg="#1e1e1e")
+spacer.grid(row=0, column=1)
+
+# Separator line (now in its own column)
+separator = ttk.Separator(progress_frame, orient="vertical")
+separator.grid(row=0, column=2, sticky="ns", padx=12)
+
+# Spacer column (empty frame)
+spacer = tk.Frame(progress_frame, width=15, bg="#1e1e1e")
+spacer.grid(row=0, column=3)
+
+# Right Column: Settings (shifted further right to column=3)
 right_frame = tk.Frame(progress_frame, bg="#1e1e1e")
-right_frame.grid(row=0, column=1, sticky="nsew")
+right_frame.grid(row=0, column=4, sticky="nsew")
 
-tk.Label(right_frame, text="SETTINGS", font=("Arial", 11, "bold"), fg="white", bg="#1e1e1e").pack()
+tk.Label(
+    right_frame,
+    text="⚙ SETTINGS",
+    font=("Arial", 11, "bold"),
+    fg="white",
+    bg="#1e1e1e"
+).pack(anchor="center", pady=(0, 10))  # Title centered
 
 btn_history = ttk.Button(right_frame, text="View History Log", command=show_history_popup)
-btn_history.pack(pady=5)
+btn_history.pack(anchor="center", pady=10)
 
 btn_clear_history = ttk.Button(right_frame, text="Clear History", command=clear_history)
-btn_clear_history.pack(pady=5)
+btn_clear_history.pack(anchor="center", pady=10)
 
 btn_about = ttk.Button(right_frame, text="About", command=show_about)
-btn_about.pack(pady=5)
+btn_about.pack(anchor="center", pady=10)
 
-# Separator line (vertical between frames)
-separator = ttk.Separator(progress_frame, orient="vertical")
-separator.grid(row=0, column=1, sticky="ns", padx=10)
+# Pack as RWMOD button (moved under settings)
+pack_button = tk.Button(
+    right_frame,
+    text="PACK AS .RWMOD",
+    command=start_thread,
+    bg="#006666",
+    fg="white",
+    font=("Arial", 11, "bold"),
+    width=18
+)
+pack_button.pack(anchor="center", pady=(15, 3))  # extra space above
+
+# Add a subtle separator line (optional)
+separator = ttk.Separator(root, orient="horizontal")
+separator.pack(fill="x", padx=10, pady=(0, 10))
+
 
 root.mainloop()
 
