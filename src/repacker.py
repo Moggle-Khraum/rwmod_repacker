@@ -873,7 +873,7 @@ def verify_rwmod_structure(rwmod_path: str) -> bool:
 def pack_as_rwmod(
     folder_path: str,
     rwmod_path: str,
-    compression: int = zipfile.ZIP_DEFLATED,  # ← CHANGED TO DEFLATED
+    compression: int = zipfile.ZIP_DEFLATED,
     hide_files: bool = True,
     callback: Optional[Callable[[float], None]] = None
 ):
@@ -882,6 +882,7 @@ def pack_as_rwmod(
     - Compresses folder with DEFLATED (faster than LZMA)
     - Applies obfuscation via tamper_zip
     - Validates with checksum and full structure verification
+    - Updates three progress bars (overall, zip, rwmod)
     """
     temp_zip = rwmod_path + ".temp.zip"
     success = False  # Track completion
@@ -901,15 +902,21 @@ def pack_as_rwmod(
             temp_zip,
             compression=compression,
             hide_files=hide_files,
-            callback=lambda p: update_callback(p * 0.4)  # Map to 0-40%
+            callback=lambda p: (
+                update_callback(p * 0.4),  # map to 0–40% overall
+                progress_zip.config(value=p * 100)
+            )
         )
 
         # 🔐 Step 2: Obfuscate archive (40% of total process)
         update_status("🔐 APPLYING MULTI-LAYER OBFUSCATION...")
         tamper_zip(
-            temp_zip, 
-            rwmod_path, 
-            callback=lambda p: update_callback(0.4 + p * 0.4)  # Map to 40-80%
+            temp_zip,
+            rwmod_path,
+            callback=lambda p: (
+                update_callback(0.4 + p * 0.4),  # map to 40–80% overall
+                progress_rwmod.config(value=p * 100)
+            )
         )
 
         # 🧮 Step 3: Quick checksum validation (5% of total process)
@@ -917,27 +924,24 @@ def pack_as_rwmod(
         update_callback(0.8)
         verification_report = verify_checksum(rwmod_path)
 
-        # Advance Verification Checker
-        if not verification_report['success'] or verification_report['file_intergrity'] != 'verified':
+        if not verification_report['success'] or verification_report['file_integrity'] != 'verified':
             error_msg = verification_report.get('error', 'Unknown verification Error')
             raise RuntimeError(f"❌ Checksum Verification Failed: {error_msg}")
 
         # ♻️ Step 4: Full structural validation (15% of total process)
         update_status("♻️ VERIFYING RWMOD STRUCTURE...")
         update_callback(0.85)
-        
-        # Simulate verification progress (since it's fast)
+
         for i in range(5):
             time.sleep(0.1)
             update_callback(0.85 + (i * 0.03))
-        
+
         verify_rwmod_structure(rwmod_path)
         update_callback(0.95)
 
         success = True  # ✅ Successful pack
 
     except Exception as e:
-        # 🚨 Cleanup on failure
         if os.path.exists(rwmod_path):
             try:
                 os.remove(rwmod_path)
@@ -946,7 +950,6 @@ def pack_as_rwmod(
         raise  # Bubble up exception
 
     finally:
-        # 🧹 Remove temporary ZIP
         update_status("🧹 CLEANING ARCHIVE TRACES")
         if os.path.exists(temp_zip):
             try:
@@ -954,16 +957,15 @@ def pack_as_rwmod(
             except Exception:
                 pass
 
-        # 🧹 Final safeguard — remove bad output
         if not success and os.path.exists(rwmod_path):
             try:
                 os.remove(rwmod_path)
             except Exception:
                 pass
 
-    # ✅ Report completion
     update_status("🔒 ARCHIVE REINFORCING COMPLETE..")
     update_callback(1.0)
+
 
 #=============================== PACK AS RWMOD END =================================
 
@@ -1033,16 +1035,19 @@ def set_pack_button_state(enabled: bool):
 def run_packing():
     pack_button.config(state="disabled")
     set_pack_button_state(False)
+
+    # Reset progress bars
     progress_bar["value"] = 0
-    progress_bar.pack(pady=10)
+    progress_zip["value"] = 0
+    progress_rwmod["value"] = 0
+
     update_status("⚙ INITIALIZING ARCHIVE SEQUENCE...")
 
     def update_progress(p):
-        """Updates UI with progress percentage + stage message."""
+        """Updates overall progress bar + stage message."""
         progress_bar["value"] = p * 100
         progress_bar.update_idletasks()
-        
-        # Update status with percentage
+
         if p < 0.4:
             stage = "INITIATING ARCHIVE CREATION"
         elif p < 0.8:
@@ -1051,11 +1056,10 @@ def run_packing():
             stage = "VALIDATING ARCHIVE INTEGRITY"
         else:
             stage = "FINALIZING ARCHIVE SEQUENCE"
-            
+
         update_status(f"⚙ {stage}... {int(p * 100)}%")
 
     try:
-        # 📂 Step 1: Collect input paths
         folder_path = folder_entry.get().strip()
         output_dir = output_entry.get().strip() or os.path.expanduser("~/Downloads")
 
@@ -1063,24 +1067,24 @@ def run_packing():
             messagebox.showerror("❌ Error", "⚠️ Please select a valid mod folder.")
             set_pack_button_state(True)
             progress_bar["value"] = 0
+            progress_zip["value"] = 0
+            progress_rwmod["value"] = 0
             return
 
         modname = os.path.basename(folder_path.rstrip("/\\"))
         rwmod_path = os.path.join(output_dir, modname + ".rwmod")
 
-        # 📦 Step 2: Perform packing with live progress
+        # Run packaging with detailed progress
         pack_as_rwmod(folder_path, rwmod_path, callback=update_progress)
 
-        # 📝 Step 3: Log + notify user
         add_to_log(modname, rwmod_path)
         update_status("✅ ARCHIVE SEQUENCE COMPLETE! 100%")
         messagebox.showinfo("🎉 ARCHIVING SUCCESSFUL", f"📦 EXPORTED TO:\n{rwmod_path}")
 
     except Exception as e:
-        # 🚨 Step 4: Error handler
         update_status("❌ FAILED")
         error_msg = str(e).lower()
-        
+
         if "checksum" in error_msg or "corrupt" in error_msg:
             msg = f"🚨 FILE CORRUPTION:\n\n{str(e)}"
         elif "size mismatch" in error_msg:
@@ -1096,15 +1100,19 @@ def run_packing():
         )
 
     finally:
-        # 🧹 Step 5: Reset UI + progress bar
         folder_entry.delete(0, tk.END)
         output_entry.delete(0, tk.END)
         folder_name.set("FOLDER: (NONE)")
         modinfo_text.delete("1.0", tk.END)
         set_pack_button_state(True)
         update_status("⚙ READY and WAITING...")
+
+        # Reset bars
         progress_bar["value"] = 0
+        progress_zip["value"] = 0
+        progress_rwmod["value"] = 0
         progress_bar.update_idletasks()
+
 
 
 #======================== EXECUTES THE ARCHIVING SEQUENCE =============================
@@ -1630,7 +1638,7 @@ def show_about():
 root = tk.Tk()
 root.title("RWMod Anti-Theft Repacker v.1.3.5")
 root.iconbitmap(ICON_PATH['ico'])
-root.geometry("550x680")
+root.geometry("550x750")
 root.configure(bg="#1e1e1e")
 root.resizable(False, False)
 
@@ -1638,7 +1646,7 @@ root.resizable(False, False)
 history_log = load_history()
 
 # Main UI Elements
-tk.Label(root, text="RWMod Anti-Theft Repacker", font=("Arial", 14, "bold"), fg="#00ff88", bg="#1e1e1e").pack(pady=(10, 20))
+tk.Label(root, text="RWMod Anti-Theft Repacker", font=("Arial", 18, "bold"), fg="#00ff88", bg="#1e1e1e").pack(pady=(10, 10))
 
 # Folder Selection
 mod_row = tk.Frame(root, bg="#1e1e1e")
@@ -1670,40 +1678,51 @@ tk.Label(root, text="MOD-INFO PREVIEWER:", fg="white", bg="#1e1e1e").pack(anchor
 modinfo_text = scrolledtext.ScrolledText(root, height=14, bg="#2d2d2d", fg="white", insertbackground="white")
 modinfo_text.pack(fill="both", expand=False, padx=10, pady=(0, 10))
 
-# PROGRESS BAR
-progress_bar = ttk.Progressbar(root, mode='determinate', length=480)
-progress_bar.pack(pady=10)
-progress_bar["value"] = 0
+# PROGRESS BARS
 
-# Action Buttons
-pack_button = tk.Button(root, text="PACK AS .RWMOD", command=start_thread, bg="#006666", fg="white", font=("Arial", 11, "bold"))
-pack_button.pack(pady=8)
+# Frame for Process Bars + Settings side by side
+progress_frame = tk.Frame(root, bg="#1e1e1e")
+progress_frame.pack(fill="x", padx=10, pady=10)
 
-# Add a subtle separator line (optional)
-separator = ttk.Separator(root, orient="horizontal")
-separator.pack(fill="x", padx=10, pady=(0, 10))
+# Left Column: Process Bars
+left_frame = tk.Frame(progress_frame, bg="#1e1e1e")
+left_frame.grid(row=0, column=0, sticky="nsew", padx=(0, 20))
 
-status_label = tk.Label(root, text="⚙ READY and WAITING...", fg="white", bg="#1e1e1e", font=("Arial", 10, "bold"))
-status_label.pack(pady=(0, 10))
+tk.Label(left_frame, text="SEQUENCE STATUS QUEUE:", font=("Arial", 11, "bold"), fg="white", bg="#1e1e1e").pack(anchor="w")
 
-# Add a subtle separator line (optional)
-separator = ttk.Separator(root, orient="horizontal")
-separator.pack(fill="x", padx=10, pady=(0, 10))
+# Overall progress
+tk.Label(left_frame, text="OVERALL STATUS:", fg="white", bg="#1e1e1e").pack(anchor="w")
+progress_bar = ttk.Progressbar(left_frame, mode="determinate", length=250)
+progress_bar.pack(pady=(0, 10))
 
-action_buttons = tk.Frame(root, bg="#1e1e1e")
-action_buttons.pack(pady=20)
+# Archiving progress
+tk.Label(left_frame, text="ARCHIVING STATUS:", fg="white", bg="#1e1e1e").pack(anchor="w")
+progress_zip = ttk.Progressbar(left_frame, mode="determinate", length=250)
+progress_zip.pack(pady=(0, 10))
 
-# For About Button
-btn_about = ttk.Button(root, text="About", command=show_about)
-btn_about.pack(side="bottom", pady=20)
+# Obfuscation progress
+tk.Label(left_frame, text="OBFUSCATION STATUS:", fg="white", bg="#1e1e1e").pack(anchor="w")
+progress_rwmod = ttk.Progressbar(left_frame, mode="determinate", length=250)
+progress_rwmod.pack(pady=(0, 10))
 
-# For Clearing the History Log - FIXED: Add this button
-btn_clear_history = ttk.Button(action_buttons, text="Clear History", command=clear_history, width=15)
-btn_clear_history.pack(side="left", padx=10, ipadx=10)
+# Right Column: Settings
+right_frame = tk.Frame(progress_frame, bg="#1e1e1e")
+right_frame.grid(row=0, column=1, sticky="nsew")
 
-# For View History Log
-btn_history = ttk.Button(action_buttons, text="View History Log", command=show_history_popup, width=20)
-btn_history.pack(side="left", padx=10, ipadx=10)
+tk.Label(right_frame, text="SETTINGS", font=("Arial", 11, "bold"), fg="white", bg="#1e1e1e").pack()
+
+btn_history = ttk.Button(right_frame, text="View History Log", command=show_history_popup)
+btn_history.pack(pady=5)
+
+btn_clear_history = ttk.Button(right_frame, text="Clear History", command=clear_history)
+btn_clear_history.pack(pady=5)
+
+btn_about = ttk.Button(right_frame, text="About", command=show_about)
+btn_about.pack(pady=5)
+
+# Separator line (vertical between frames)
+separator = ttk.Separator(progress_frame, orient="vertical")
+separator.grid(row=0, column=1, sticky="ns", padx=10)
 
 root.mainloop()
 
