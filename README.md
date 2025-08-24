@@ -4,55 +4,22 @@
 <img width="200" height="195" src="docs/lock.png" alt="Icon of the tool" title="Tool Icon">
 </div>
 
-## A security-focused tool that packages the Rusted Warfare Mods into a protected `.rwmod` files with anti-tampering measures via obfuscation and 'dummying' method.
+## 📌 Introducing RWMod Anti-theft Repacker Tool
+- A security-focused tool that packages your MOD folders into a protected ZIP file with simple anti-tampering methods, then convereted to `.rwmod` files which is readable by the game 'Rusted Warfare' which is both available on [Android](https://play.google.com/store/apps/details?id=com.corrodinggames.rts&hl=en_US), [iOS](https://apps.apple.com/us/app/rusted-warfare-rts/id1514329124), [PC via STEAM](https://store.steampowered.com/app/647960/Rusted_Warfare__RTS/), and [Mac](https://apps.apple.com/us/app/rusted-warfare-rts/id1514329124) platforms.
 
-## 📑 Table of Contents
-- [Protection Process](#%EF%B8%8F-protection-process-dummying-)
-- [Features](https://github.com/Moggle-Khraum/rwmod_repacker/tree/main?tab=readme-ov-file#features)
-- [Pre-Built Downloads](#-pre-built-downloads)
-- [For Paranoid Builders](#-for-paranoid-builders)
-  - [Prerequisites](#prerequisites)
-  - [Clone & Prepare](#1-clone--prepare)
-  - [Customize Build](#2-customize-build)
-  - [Build Options](#3-build-options)
-  - [Expected Warnings](#4-expected-warnings-safe-to-ignore)
-  - [Clean & Rebuild](#5-clean--rebuild)
-- [Testing Your Build](#-testing-your-build)
-- [Security Notes](#-security-notes)
-- [Troubleshooting](#-troubleshooting)
-- [Advanced](#advanced-)
-
-## 🛡️ Protection Process (Dummying) 🔒
-
-The RWMod Repacker uses a multi-layered "dummying" technique to protect mod files:
-
-```
-1. [DUMMY CREATION]  
-   │─ Generates a "dummy shell" with:  
-   │  • Random prefix (1024-8192 bytes)  
-   │  • Fake PNG header signature  
-   │  • Placeholder hash blocks  
-
-2. [REAL FILE INSERTION]  
-   │─ Encapsulates the actual mod files in:  
-   │  • Standard ZIP (unmodified contents)  
-   │  • SHA-256 content verification hash  
-   │  • Custom footer signature  
-
-3. [PROTECTION LAYERS]  
-   │─ Final protected .rwmod contains:  
-   │  • Obfuscated size/offset data  
-   │  • Mutating signatures (changes per build)  
-   │  • Dead byte padding (anti-tamper noise)  
-```
+## 🛡️ Protection Process & AI Role 🔒
+- The RWMod Repacker uses a multi-layered extensive methods to protect mod files from being easily extracted using common tools such as 7-Zip or WinRAR.
+The program was made through the use of multiple AI's such as ChatGPT, DeepSeek, and Gemini AI. The process was ardous as sometimes after asking so much the AI now starts hallucinating and spits out the same code prone with errors. And that is why, other AI come in handy in answering my specific queries, assists me in debugging the code in Python, exporting the PY Script into a working EXE program.
 
 ## Features
 - ----------- TOOL FEATURES --------------
 - 🖥️ Simple GUI interface
 - 📂 Easy Click in Mod/Output Selection
+- 🛡️ Select Modes for Protection: Partial/Maximum
 - 📰 Reads 'MOD-INFO.txt' of the Mod's Folder
+- 
 - ---------- TOOL FUNCTIONS -------------
-- 🔒 Tamper-evident packaging
+- 🔒 
 - 🎲 Random prefix obfuscation (1024-8192 bytes)
 - 🔐 SHA-256 content verification
 - 🔏 Mutable Unique Header/Footer Signature
@@ -60,8 +27,16 @@ The RWMod Repacker uses a multi-layered "dummying" technique to protect mod file
 
 
 ## 📥 Pre-Built Downloads
+- ----------- WINDOWS -------------
 - 💽 RWMod Repacker Installer [Download Here (.msi)](https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/releases/program_installer/RWMod_Repacker_Setup.msi)
-- 🧰 RWMod Repacker Portable [Downlaod Here (.zip)](https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/releases/portable_zips/RWMod_repacker_v1.3.zip)
+- 🧰 [REC] RWMod Repacker Portable [Downlaod Here (.zip)](https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/releases/portable_zips/RWMod_repacker_v1.3.zip)
+- ----------- LINUX ---------------
+- 🧰 NONE
+-  ---------- ANDROID -------------
+-  📱 Pyroid 3 and RWMod Repacker Script (FOR TESTING ONLY)
+-  - Download Pyroid 3 from [Google Playstore](https://play.google.com/store/apps/details?id=ru.iiec.pydroid3&hl=en_US)
+   - Download RWMod Anti Repacker [here]() or go to `src/
+
 
 ## 🔨 For Paranoid Builders
 Build your own executable to verify the code:
