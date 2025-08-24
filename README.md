@@ -17,116 +17,54 @@ The program was made through the use of multiple AI's such as ChatGPT, DeepSeek,
 - 📂 Easy Click in Mod/Output Selection
 - 🛡️ Select Modes for Protection: Partial/Maximum
 - 📰 Reads 'MOD-INFO.txt' of the Mod's Folder
-- 
+- 🎮 .RWMOD file is still readable and playable
 - ---------- TOOL FUNCTIONS -------------
-- 🔒 
-- 🎲 Random prefix obfuscation (1024-8192 bytes)
-- 🔐 SHA-256 content verification
-- 🔏 Mutable Unique Header/Footer Signature
-- 💽 Rusted Warfare Readable File
-
+- 🔒 Scans files, Zips your file, inject dummies, Convert to .RWMOD
+- 🖼️ It has Mod-info Previewer, View History Log & Delete Log, About Repacker, Theme Editor[BETA]
+- 🔏 You can select Modes of Security: Partial or Maximum.
 
 ## 📥 Pre-Built Downloads
-- ----------- WINDOWS -------------
-- 💽 RWMod Repacker Installer [Download Here (.msi)](https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/releases/program_installer/RWMod_Repacker_Setup.msi)
-- 🧰 [REC] RWMod Repacker Portable [Downlaod Here (.zip)](https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/releases/portable_zips/RWMod_repacker_v1.3.zip)
-- ----------- LINUX ---------------
-- 🧰 NONE
+| Platform | Package | Source |
+|----------|---------|--------|
+| Windows  | 💽 Installer [MSI] | [Download Here (.msi)](https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/releases/program_installer/RWMod_Repacker_Setup.msi)       |
+| Windows  | 🧰 Portable [ZIP] | [Downlaod Here (.zip)](https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/releases/portable_zips/RWMod_repacker_v1.3.zip)       |
+| MAC OS   |   NONE  |  NONE  |
+| LINUX    |   NONE  |  NONE  |
+| Android  |  SEE BELOW |  SEE  BELOW |
+|----------|---------|--------|
+
+
 -  ---------- ANDROID -------------
 -  📱 Pyroid 3 and RWMod Repacker Script (FOR TESTING ONLY)
 -  - Download Pyroid 3 from [Google Playstore](https://play.google.com/store/apps/details?id=ru.iiec.pydroid3&hl=en_US)
-   - Download RWMod Anti Repacker [here]() or go to `src/
-
+   - Download RWMod Anti Repacker by going to ``src/`` and find ``rwmod_repacker_v3_Android.py``. Click it and click the ``Download Raw File``.
+   - Make sure both the SCRIPT and your MOD Folder is in your INTERNAL STORAGE. Open the Script on Pyroid 3 and Run it.
+   - Then browse your folder, select output location, PACK IT, and if successful, your .RWMOD is now complete.
 
 ## 🔨 For Paranoid Builders
 Build your own executable to verify the code:
 
-### Prerequisites
-- **Python 3.8-3.11** (64-bit recommended)
-- **Windows 10/11** (Linux/WSL requires cross-compile)
-- **10MB disk space** for build artifacts
+### 🗒️ Prerequisites
+- **Python 3.8-3.11**
+- **Be it Windows 10/11**
+- **10MB disk space**
 
-### 1. Clone & Prepare
-```bash
-git clone https://github.com/yourrepo/rwmod_repacker.git
-cd rwmod_repacker
-pip install -r requirements.txt
-```
-
-### 2. Customize Build
-Edit these in `setup.py`:
-```python
-# Generate new GUID at https://guidgen.com/
-UPGRADE_CODE = "{a6ad4b2e-92f4-4062-9547-ff06205e6a87}" 
-
-# Personalize metadata
-author="Your Name"
-description="Your custom description"
-```
-
-Replace `app_icon.ico` with your own 256x256px Windows icon file.
-
-### 3. Build Options
-```bash
-# Option A: Create installer (recommended)
-python setup.py bdist_msi
-
-# Option B: Portable build
-python setup.py build
-```
-
-### 4. Expected Warnings (Safe to Ignore)
-```
-? api-ms-win-crt-*.dll → Windows system files
-? test → Unused testing modules
-? tomllib → Python 3.11+ backport
-```
-These don't affect functionality.
-
-### 5. Clean & Rebuild
-```bash
-# Full clean (Windows)
-python setup.py clean
-rmdir /s /q build dist
-
-# Full clean (Linux/WSL)
-python setup.py clean
-rm -rf build dist
-
-# Rebuild
-python setup.py bdist_msi
-```
-
-## 🧪 Testing Your Build
-1. Run from command line for debug info:
-   ```bash
-   cd dist
-   RWMod_Repacker.exe
-   ```
-2. Pack a test mod folder
-3. Verify output:
-   ```python
-   import hashlib
-   with open("test.rwmod","rb") as f:
-       print(hashlib.sha256(f.read()).hexdigest())
-   ```
+### 🔧 Run the script on your PC
+- Download Python 3.8-3.11
+- Open the PY File using IDLE
+- Run it, and voila. No need for conversion to EXE
+- Works the same as Installer or Portable Version
 
 ## ⚠️ Security Notes
 - Compiled builds are deterministic
 - All protection layers activate at build time
-- Antivirus may flag due to protection methods
 
 ## 🚨 Troubleshooting
 | Issue | Solution |
 |-------|----------|
-| Missing DLLs | Install [VC++ Redist](https://aka.ms/vs/17/release/vc_redist.x64.exe) |
-| GUI fails | Run with `base = None` in `setup.py` |
-| False positives | Verify SHA256 matches your build |
+| False Positives |Run the Code instead |
+| GUI Fails | Restart IDLE and open the code again |
 
 ---
-## 🔧Advanced : 
-- To modify protections, edit `rwmod_repacker_v3.py`:
-- `get_header_sig()` - Change signature pattern
-- `tamper_zip()` - Adjust obfuscation settings
 
-© 2023 Moggstone | [Report Issues](https://github.com/Moggle-Khraum/rwmod_repacker/issues)
+© 2023 Moggstone | Assisted with AI | [Report Issues](https://github.com/Moggle-Khraum/rwmod_repacker/issues)
