@@ -11,7 +11,7 @@
 - The RWMod Repacker uses a multi-layered extensive methods to protect mod files from being easily extracted using common tools such as 7-Zip or WinRAR.
 The program was made through the use of multiple AI's such as ChatGPT, DeepSeek, and Gemini AI. The process was ardous as sometimes after asking so much the AI now starts hallucinating and spits out the same code prone with errors. And that is why, other AI come in handy in answering my specific queries, assists me in debugging the code in Python, exporting the PY Script into a working EXE program.
 
-## Features
+## 📌 Features
 - ----------- TOOL FEATURES --------------
 - 🖥️ Simple GUI interface
 - 📂 Easy Click in Mod/Output Selection
@@ -30,11 +30,9 @@ The program was made through the use of multiple AI's such as ChatGPT, DeepSeek,
 | Windows  | 🧰 Portable [ZIP] | [Downlaod Here (.zip)](https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/releases/portable_zips/RWMod_repacker_v1.3.zip)       |
 | MAC OS   |   NONE  |  NONE  |
 | LINUX    |   NONE  |  NONE  |
-| Android  |  SEE BELOW |  SEE  BELOW |
-|----------|---------|--------|
+| Android  |  SCRIPT/Pyroid3 | [INSTRUCTIONS HERE](📌) |
 
-
--  ---------- ANDROID -------------
+## 📌 HOW TO RUN IN ANDROID
 -  📱 Pyroid 3 and RWMod Repacker Script (FOR TESTING ONLY)
 -  - Download Pyroid 3 from [Google Playstore](https://play.google.com/store/apps/details?id=ru.iiec.pydroid3&hl=en_US)
    - Download RWMod Anti Repacker by going to ``src/`` and find ``rwmod_repacker_v3_Android.py``. Click it and click the ``Download Raw File``.
