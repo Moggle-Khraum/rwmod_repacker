@@ -4,47 +4,14 @@
 <img width="200" height="195" src="docs/lock.png" alt="Icon of the tool" title="Tool Icon">
 </div>
 
-## A security-focused tool that packages the Rusted Warfare Mods into a protected `.rwmod` files with anti-tampering measures via obfuscation and 'dummying' method.
-
-## 📑 Table of Contents
-- [Protection Process](#%EF%B8%8F-protection-process-dummying-)
-- [Features](https://github.com/Moggle-Khraum/rwmod_repacker/tree/main?tab=readme-ov-file#features)
-- [Pre-Built Downloads](#-pre-built-downloads)
-- [For Paranoid Builders](#-for-paranoid-builders)
-  - [Prerequisites](#prerequisites)
-  - [Clone & Prepare](#1-clone--prepare)
-  - [Customize Build](#2-customize-build)
-  - [Build Options](#3-build-options)
-  - [Expected Warnings](#4-expected-warnings-safe-to-ignore)
-  - [Clean & Rebuild](#5-clean--rebuild)
-- [Testing Your Build](#-testing-your-build)
-- [Security Notes](#-security-notes)
-- [Troubleshooting](#-troubleshooting)
-- [Advanced](#advanced-)
+## Introducing RWMod Anti-theft Repacker Tool
+ A security-focused tool that packages your MOD folders into a protected ZIP file with simple anti-tampering methods, then convereted to `.rwmod` files which is readable by the game 'Rusted Warfare' which is both available on [Android](https://play.google.com/store/apps/details?id=com.corrodinggames.rts&hl=en_US), [iOS](https://apps.apple.com/us/app/rusted-warfare-rts/id1514329124), [PC via STEAM](https://store.steampowered.com/app/647960/Rusted_Warfare__RTS/), and [Mac](https://apps.apple.com/us/app/rusted-warfare-rts/id1514329124) platforms.
 
 ## 🛡️ Protection Process (Dummying) 🔒
 
-The RWMod Repacker uses a multi-layered "dummying" technique to protect mod files:
+The RWMod Repacker uses a multi-layered extensive methods to protect mod files from being easily extracted using common tools such as 7-Zip or WinRAR.
+The program was made through the use of multiple AI's such as ChatGPT, DeepSeek, and Gemini AI. The process was ardous as sometimes after asking so much the AI now starts hallucinating and spits out the same code prone withe errosrs
 
-```
-1. [DUMMY CREATION]  
-   │─ Generates a "dummy shell" with:  
-   │  • Random prefix (1024-8192 bytes)  
-   │  • Fake PNG header signature  
-   │  • Placeholder hash blocks  
-
-2. [REAL FILE INSERTION]  
-   │─ Encapsulates the actual mod files in:  
-   │  • Standard ZIP (unmodified contents)  
-   │  • SHA-256 content verification hash  
-   │  • Custom footer signature  
-
-3. [PROTECTION LAYERS]  
-   │─ Final protected .rwmod contains:  
-   │  • Obfuscated size/offset data  
-   │  • Mutating signatures (changes per build)  
-   │  • Dead byte padding (anti-tamper noise)  
-```
 
 ## Features
 - ----------- TOOL FEATURES --------------
