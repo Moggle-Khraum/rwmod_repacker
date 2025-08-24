@@ -1,8 +1,0 @@
-[
-  {
-    "timestamp": "2025-08-20 11:49:19",
-    "folder": "Tauren_Chieftain",
-    "output": "D:/ADMIN/Documents\\Tauren_Chieftain.rwmod",
-    "checksum": "763265dc213ef7973cb4cb409cc8da16003a43066e0444432dd9c010f8f098b1"
-  }
-]
