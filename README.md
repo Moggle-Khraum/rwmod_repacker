@@ -30,7 +30,7 @@ The program was made through the use of multiple AI's such as ChatGPT, DeepSeek,
 | Windows  | 🧰 Portable [ZIP] | [Downlaod Here (.zip)](https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/releases/portable_zips/RWMod_repacker_v1.3.zip)       |
 | MAC OS   |   NONE  |  NONE  |
 | LINUX    |   NONE  |  NONE  |
-| Android  |  SCRIPT/Pyroid3 | [INSTRUCTIONS HERE](📌) |
+| Android  |  SCRIPT/Pyroid3 | [INSTRUCTIONS BELOW] |
 
 ## 📌 HOW TO RUN IN ANDROID
 -  📱 Pyroid 3 and RWMod Repacker Script (FOR TESTING ONLY)
