@@ -286,6 +286,42 @@
             .catch(() => {
                 issuesList.innerHTML = '<li class="error-item">Could not load issues</li>';
             });
+			
+			
+			
+			// Changelog Fetcher
+			const changelogList = document.querySelector(".changelog-list");
+			fetch("changelog.json")
+			  .then(res => {
+				if (!res.ok) throw new Error(`HTTP error! ${res.status}`);
+				return res.json();
+			  })
+			  .then(data => {
+				changelogList.innerHTML = ""; // clear placeholder
+
+				data.forEach(entry => {
+				  const div = document.createElement("div");
+				  div.className = "changelog-item" + (entry.latest ? " latest" : "");
+				  div.innerHTML = `
+					<span class="version">${entry.version}</span>
+					<span class="description">${entry.title}</span>
+					${entry.latest ? '<span class="badge">Latest</span>' : ""}
+				  `;
+				  div.addEventListener("click", () => {
+					openChangelogPopup(entry); // function to show popup
+				  });
+				  changelogList.appendChild(div);
+				});
+			  })
+			  .catch(err => {
+				console.error("Failed to load changelog:", err);
+				changelogList.innerHTML = '<div class="error">Could not load changelog</div>';
+			  });
+</script>
+
+			
+			
+			
     </script>
     <script src="script.js"></script>
 	
