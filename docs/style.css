@@ -968,6 +968,58 @@ body {
 }
 
 /* ===================
+   MODAL & CHANGELOGS SECTIONS
+   =================== */
+.modal {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+.modal-content {
+  background: var(--card-bg, #fff);
+  color: var(--text-color, #000);
+  border-radius: 10px;
+  max-width: 500px;
+  width: 90%;
+  padding: 20px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+  animation: fadeIn 0.3s ease;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.modal-body {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+.changelog-item {
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.changelog-item:hover {
+  background: #e8f4ff;
+}
+
+/* ===================
    AUTHOR & LICENSE SECTIONS
    =================== */
 .author-section,

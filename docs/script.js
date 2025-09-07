@@ -1,5 +1,49 @@
 // RWMod Repacker Website JavaScript
 
+// Elements
+const changelogList = document.getElementById("changelogList");
+const versionModal = document.getElementById("versionModal");
+const modalTitle = document.getElementById("modalTitle");
+const modalBody = document.getElementById("modalBody");
+const closeVersion = document.getElementById("closeVersion");
+
+// Load changelog.json dynamically
+fetch("changelog.json")
+  .then(res => res.json())
+  .then(data => {
+    changelogList.innerHTML = ""; // clear loading text
+
+    data.forEach(entry => {
+      const div = document.createElement("div");
+      div.className = "changelog-item";
+      if (entry.latest) div.classList.add("latest");
+
+      div.innerHTML = `
+        <span class="version">${entry.version}</span>
+        <span class="description">${entry.title}</span>
+        ${entry.latest ? '<span class="badge">Latest</span>' : ""}
+      `;
+
+      // Click to open modal with details
+      div.addEventListener("click", () => {
+        modalTitle.innerHTML = `<i class="fas fa-history"></i> ${entry.version}`;
+        modalBody.innerText = entry.details;
+        versionModal.style.display = "flex";
+      });
+
+      changelogList.appendChild(div);
+    });
+  })
+  .catch(() => {
+    changelogList.innerHTML = "<p class='error'>Failed to load changelog.</p>";
+  });
+
+// Close modal logic
+closeVersion.onclick = () => { versionModal.style.display = "none"; };
+window.onclick = (e) => { if (e.target === versionModal) versionModal.style.display = "none"; };
+
+
+
 document.addEventListener('DOMContentLoaded', function() {
     // Initialize all functionality
     initThemeToggle();

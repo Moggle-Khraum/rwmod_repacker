@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body class="dark-mode">
     <!-- NAVBAR -->
     <nav class="navbar">
@@ -132,31 +133,13 @@
                         </div>
                         <div class="card-content">
                             <div class="changelog-list">
-                                <div class="changelog-item latest">
-                                    <span class="version">v1.3.1</span>
-                                    <span class="description">Improved the tampering function</span>
-                                    <span class="badge">Latest</span>
-                                </div>
-                                <div class="changelog-item">
-                                    <span class="version">v1.3.0</span>
-                                    <span class="description">Initial public release</span>
-                                </div>
-                                <div class="changelog-item">
-                                    <span class="version">v1.2.5</span>
-                                    <span class="description">Installer & Portable Created</span>
-                                </div>
-                                <div class="changelog-item">
-                                    <span class="version">v1.2.0</span>
-                                    <span class="description">Second Build Created</span>
-                                </div>
-                                <div class="changelog-item">
-                                    <span class="version">v1.1.0</span>
-                                    <span class="description">First Build Created</span>
-                                </div>
+                                <p>Loading changelog...</p>
                             </div>
                         </div>
                     </div>
                 </div>
+					
+					<!-- Changelog -->
             </section>
 
 
@@ -305,5 +288,32 @@
             });
     </script>
     <script src="script.js"></script>
+	
+	<!-- Version Modal -->
+	<div class="modal" id="versionModal">
+		<div class="modal-content">
+			<div class="modal-header">
+				<h3 id="modalTitle"><i class="fas fa-history"></i> Version Details</h3>
+				<button class="close-btn" id="closeVersion">&times;</button>
+			</div>
+			<div class="modal-body" id="modalBody"></div>
+		</div>
+	</div>
+
+		
+		
+		
+		
+		
+
+      <!-- Details will be injected here -->
+	</div>
+  </div>
+</div>
+
+	
+	
+	
+	
 </body>
 </html>
