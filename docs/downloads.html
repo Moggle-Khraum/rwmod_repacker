@@ -5,63 +5,170 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RWMod Repacker - Downloads</title>
     <link rel="icon" href="https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/docs/favicon.ico?raw=true" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-<body>
-   <!-- Sticky Navbar -->
-   <div class="navbar">
-       <a href="index.html">🏡 Home</a>
-       <a href="downloads.html">⏳ Downloads</a>
-   </div>
-
-   <header>
-     <h1>📌 Download RWMod Repacker</h1>
-   </header>
-
-   <div class="download-box">
-     <h2><center>📜 Choose what version to download:</center></h2>
-	 <h2><center>ONLY EFFECTIVE ON ANDROID 10 and BELOW.<br>ANDROID 11+ WILL GIVE AN ERROR!</center></h2>
-     <div style="display:flex; justify-content:center; gap:15px; flex-wrap:wrap;">
-        <!-- Installer -->
-        <div style="text-align:center;">
-            <a href="https://github.com/Moggle-Khraum/rwmod_repacker/releases/download/v.1.0.3/Installer_Version._RWMod_Repacker_Setup.msi"
-               class="download-btn">🛠️ Installer (v1.3.0)</a>
-            <div style="font-size:0.8em;margin-top:5px;">Automatically installs on Windows</div>
+<body class="dark-mode">
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-cube"></i>
+                <span>RWMod Repacker</span>
+            </div>
+            <div class="nav-links">
+                <a href="index.html" class="nav-link"><i class="fas fa-home"></i> Home</a>
+                <a href="downloads.html" class="nav-link active"><i class="fas fa-download"></i> Downloads</a>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i> Dark Mode
+                </button>
+            </div>
         </div>
+    </nav>
 
-        <!-- Portable -->
-        <div style="text-align:center;">
-            <a href="https://github.com/Moggle-Khraum/rwmod_repacker/releases/download/v.1.0.3/Portable_Version._RWMod_repacker_v1.3.zip"
-               class="download-btn alt">📦 Portable (v1.3.0)<span class="badge">🥇 Recommended</span></a>
-            <div style="font-size:0.8em;margin-top:5px;">Run directly without installing</div>
+    <div class="container">
+        <!-- HEADER -->
+        <header class="downloads-header">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <i class="fas fa-download"></i> Download RWMod Repacker
+                </h1>
+                <div class="warning-banner">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <span>ONLY EFFECTIVE ON ANDROID 10 and BELOW. ANDROID 11+ WILL GIVE AN ERROR!</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- MAIN CONTENT -->
+        <main>
+            <!-- Downloads Section -->
+            <section class="downloads-main">
+                <div class="card downloads-card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-box"></i> Choose what version to download</h2>
+                    </div>
+                    <div class="card-content">
+                        <div class="downloads-grid">
+                            <!-- Installer Version -->
+                            <div class="download-option installer">
+                                <div class="download-icon">
+                                    <i class="fas fa-cog"></i>
+                                </div>
+                                <h3>Installer Version</h3>
+                                <div class="version-tag">v1.3.0</div>
+                                <p>Automatically installs on Windows with desktop shortcuts and uninstaller.</p>
+                                <a href="https://github.com/Moggle-Khraum/rwmod_repacker/releases/download/v.1.0.3/Installer_Version._RWMod_Repacker_Setup.msi" 
+                                   class="btn btn-primary download-btn">
+                                    <i class="fas fa-download"></i> Download Installer
+                                </a>
+                                <div class="file-info">
+                                    <small><i class="fas fa-file"></i> MSI Package • Windows</small>
+                                </div>
+                            </div>
+
+                            <!-- Portable Version -->
+                            <div class="download-option portable primary">
+                                <div class="download-icon">
+                                    <i class="fas fa-box-open"></i>
+                                </div>
+                                <h3>Portable Version</h3>
+                                <div class="version-tag">v1.3.0</div>
+                                <div class="recommended-badge">
+                                    <i class="fas fa-star"></i> Recommended
+                                </div>
+                                <p>Run directly without installing. No admin rights required.</p>
+                                <a href="https://github.com/Moggle-Khraum/rwmod_repacker/releases/download/v.1.0.3/Portable_Version._RWMod_repacker_v1.3.zip" 
+                                   class="btn btn-primary download-btn">
+                                    <i class="fas fa-download"></i> Download Portable
+                                </a>
+                                <div class="file-info">
+                                    <small><i class="fas fa-file-archive"></i> ZIP Archive • Cross-platform</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Security Information -->
+                <div class="security-section">
+                    <div class="grid">
+                        <!-- Installer Hashes -->
+                        <div class="card security-card">
+                            <div class="card-header">
+                                <h3><i class="fas fa-shield-alt"></i> Installer Security</h3>
+                            </div>
+                            <div class="card-content">
+                                <div class="hash-info">
+                                    <div class="hash-item">
+                                        <span class="hash-label">MD5:</span>
+                                        <code class="hash-value">0f6ad26ea6246b44562471df6c57da88</code>
+                                    </div>
+                                    <div class="hash-item">
+                                        <span class="hash-label">SHA1:</span>
+                                        <code class="hash-value">2ef140707cfbafd554228d132c497c97fa57b5c3</code>
+                                    </div>
+                                </div>
+                                
+                                <div class="scan-results">
+                                    <a href="https://virusscan.jotti.org/en-US/filescanjob/60ewcn29ji" target="_blank" class="scan-link">
+                                        <img src="https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/docs/msi_scan.png?raw=true" 
+                                             alt="Installer Scan Badge" class="scan-badge" loading="lazy">
+                                    </a>
+                                    <a href="https://virusscan.jotti.org/en-US/filescanjob/60ewcn29ji" target="_blank" class="scan-text-link">
+                                        <i class="fas fa-external-link-alt"></i> View scan results on Jotti
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Portable Hashes -->
+                        <div class="card security-card">
+                            <div class="card-header">
+                                <h3><i class="fas fa-shield-alt"></i> Portable Security</h3>
+                            </div>
+                            <div class="card-content">
+                                <div class="hash-info">
+                                    <div class="hash-item">
+                                        <span class="hash-label">MD5:</span>
+                                        <code class="hash-value">7269b9de9f322114e870964943f9fa82</code>
+                                    </div>
+                                    <div class="hash-item">
+                                        <span class="hash-label">SHA1:</span>
+                                        <code class="hash-value">257d6256e83154ec0647c7021ef7d503ad026d4b</code>
+                                    </div>
+                                </div>
+                                
+                                <div class="scan-results">
+                                    <a href="https://virusscan.jotti.org/en-US/filescanjob/rh5b7dodqv" target="_blank" class="scan-link">
+                                        <img src="https://raw.githubusercontent.com/Moggle-Khraum/rwmod_repacker/refs/heads/main/docs/zip_scan.png?raw=true" 
+                                             alt="Portable Scan Badge" class="scan-badge" loading="lazy">
+                                    </a>
+                                    <a href="https://virusscan.jotti.org/en-US/filescanjob/rh5b7dodqv" target="_blank" class="scan-text-link">
+                                        <i class="fas fa-external-link-alt"></i> View scan results on Jotti
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- BACK TO TOP -->
+    <button id="backToTop" class="back-to-top" title="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Moggstone | Built with GitHub Pages & Replit</p>
         </div>
-     </div>
+    </footer>
 
-     <div style="margin-top:15px; text-align:center;">
-       <strong>🔍 Installer Hashes:</strong><br>
-       MD5: 0f6ad26ea6246b44562471df6c57da88<br>
-       SHA1: 2ef140707cfbafd554228d132c497c97fa57b5c3<br>
-	   
-	   <!-- Insert your image here -->
-	   <a href="https://virusscan.jotti.org/en-US/filescanjob/60ewcn29ji" target="_blank"><img src="https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/docs/msi_scan.png?raw=true?" alt="Installer Scan Badge" style="max-width:100%; border-radius:8px;">
-       <a href="https://virusscan.jotti.org/en-US/filescanjob/60ewcn29ji" target="_blank"
-          style="color:#19ab42;text-decoration:underline;">Check on Jotti Scan</a>
-     </div>
-	 
-     <div style="margin-top:15px; text-align:center;">
-       <strong>🔍 Portable Hashes:</strong><br>
-       MD5: 7269b9de9f322114e870964943f9fa82<br>
-       SHA1: 257d6256e83154ec0647c7021ef7d503ad026d4b<br>
-	   
-	   
-	   <!-- Insert your image here -->
-	   <a href="https://virusscan.jotti.org/en-US/filescanjob/60ewcn29ji" target="_blank"><img src="https://raw.githubusercontent.com/Moggle-Khraum/rwmod_repacker/refs/heads/main/docs/zip_scan.png?raw=true" alt="Portable Scan Badge" style="max-width:100%; border-radius:8px;">
-       <a href="https://virusscan.jotti.org/en-US/filescanjob/rh5b7dodqv" target="_blank"
-          style="color:#19ab42;text-decoration:underline;">Check on Jotti Scan</a>
-     </div>
-   </div>
-   <footer>
-      <p>© 2025 Moggstone | Built with Github Pages</p>
-   </footer>
+    <!-- Scripts -->
+    <script src="script.js"></script>
 </body>
 </html>

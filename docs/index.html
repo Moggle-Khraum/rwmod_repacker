@@ -1,172 +1,309 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>RWMod Repacker - Secure Mod Packaging</title>
-	<link rel="icon" href="https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/docs/favicon.ico?raw=true" type="image/x-icon">
-	<link rel="stylesheet" href="style.css">
+    <link rel="icon" href="https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/docs/favicon.ico?raw=true" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
-
-<body>
-
-<!-- NAVBAR -->
-<div class="navbar">
-    <a href="#">🏡 Home</a>
-    <a href="downloads.html">⏳ Downloads</a>
-	
-</div>
-
-<header>
-    <h1>⚙️ RWMod Repacker 📦</h1>
-    <p>Protect your .rwmod from being casually stolen by them thieves!</p>
-    <p>Most effective on mods played in mobile.</p>
-	<p><strong><style="color:red;">ONLY EFFECTIVE ON ANDROID 10 and BELOW. ANDROID 11+ WILL GIVE AN ERROR!</strong></p>
-	
-</header>
-
-<main>
-    <!-- Combined Download Box -->
-    <div class="download-box">
-        <h3><center>📜 About the Tool:</center></h3>
-        <div style="display:flex; justify-content:center; gap:5px; flex-wrap:wrap;">
-            <div style="text-align:center;">
-                <p><strong>RWMod Repacker</strong> was created to help mod authors protect their own work. Using this tool is optional — it is entirely up to each author whether they want to pack their mods or not. Since some mods also reuse or borrow code from other creators, using the repacker will always depend on the author’s own preference.<br><br>
-
-				<br><strong>⚠️ DISCLAIMER:</strong><br>
-				<strong><em style="color:red;">This tool does NOT guarantee 100% protection!</em></strong><br>
-				<strong><em style="color:red;">ONLY EFFECTIVE ON ANDROID 10 and BELOW. ANDROID 11+ WILL GIVE AN ERROR!</em></strong><br>
-				It still has flaws and limitations. The method it uses is called <em><strong>“dummying”</strong></em> — a mixture<br>of dummy structuring, encapsulation, and obfuscation to discourage casual theft.</p><br>
-
-			<a href="downloads.html" style="background:var(--accent); color:black; padding:12px 24px; font-weight:bold; border-radius:6px; text-decoration:none;">📦 See Download Page</a>
+<body class="dark-mode">
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-cube"></i>
+                <span>RWMod Repacker</span>
             </div>
-			
-		</div>
-	</div>
-
-    <section>
-    <!-- Top Row: Key Features | Issues -->
-    <div style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center;">
-        <div class="features" style="flex:1 1 300px;">
-            <h3>🎯 Key Features:</h3>
-            <ul>
-                <li>Readable by Rusted Warfare Mobile</li>
-                <li>Obfuscated Package</li>
-                <li>Fully Functional .RWMOD File</li>
-				<li>100% READABLE and PLAYABLE</li>
-            </ul>
+            <div class="nav-links">
+                <a href="#home" class="nav-link"><i class="fas fa-home"></i> Home</a>
+                <a href="downloads.html" class="nav-link"><i class="fas fa-download"></i> Downloads</a>
+                <button class="theme-toggle" id="themeToggle">
+                    <i class="fas fa-moon"></i> Dark Mode
+                </button>
+            </div>
         </div>
+    </nav>
 
-        <div class="features" style="flex:1 1 300px;">
-            <h3>🚧 Issues:</h3>
-            <ul id="issues-list" style="margin:0; padding-left:18px; font-size:0.9em;"></ul>
-        </div>
-		<div class="features" style="flex:1 1 300px;">
-			<h3>📕 Changelog:</h3>
-			<ul>
-				<li><strong>v1.3.1</strong> – Improved the tampering function</li>
-				<li><strong>v1.3.0</strong> – Initial public release</li>
-				<li><strong>v1.2.5</strong> – Installer & Portable Created</li>
-				<li><strong>v1.2.0</strong> – Second Build Created</li>
-				<li><strong>v1.1.0</strong> – First Build Created</li>
-			</ul>
-		</div>
+    <div class="container">
+        <!-- HEADER -->
+        <header id="home" class="hero-section">
+            <div class="hero-content">
+                <h1 class="hero-title">
+                    <i class="fas fa-shield-alt"></i> RWMod Repacker <i class="fas fa-box"></i>
+                </h1>
+                <p class="hero-subtitle">Protect your .rwmod from being casually stolen by them thieves!</p>
+                <p class="hero-description">Most effective on mods played in mobile.</p>
+                <div class="warning-banner">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <span>ONLY EFFECTIVE ON ANDROID 10 and BELOW. ANDROID 11+ WILL GIVE AN ERROR!</span>
+                </div>
+            </div>
+        </header>
+
+        <!-- MAIN CONTENT -->
+        <main>
+            <!-- About Section -->
+            <section class="about-section">
+                <div class="card main-card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-info-circle"></i> About the Tool</h2>
+                    </div>
+                    <div class="card-content">
+                        <p class="description-text">
+                            <strong>RWMod Repacker</strong> was created to help mod authors protect their own work. 
+                            Using this tool is optional — it is entirely up to each author whether they want to pack their mods or not. 
+                            Since some mods also reuse or borrow code from other creators, using the repacker will always depend on the author's own preference.
+                        </p>
+                        
+                        <div class="disclaimer-box">
+                            <div class="disclaimer-header">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <strong>DISCLAIMER</strong>
+                            </div>
+                            <div class="disclaimer-content">
+                                <p><strong>This tool does NOT guarantee 100% protection!</strong></p>
+                                <p><strong>ONLY EFFECTIVE ON ANDROID 10 and BELOW. ANDROID 11+ WILL GIVE AN ERROR!</strong></p>
+                                <p>It still has flaws and limitations. The method it uses is called <strong>"dummying"</strong> — a mixture of dummy structuring, encapsulation, and obfuscation to discourage casual theft.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="btn-container">
+                            <a href="downloads.html" class="btn btn-primary">
+                                <i class="fas fa-download"></i> See Download Page
+                            </a>
+                            <a href="https://github.com/Moggle-Khraum/rwmod_repacker" target="_blank" class="btn btn-secondary">
+                                <i class="fas fa-book"></i> View Documentation
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Content Grid -->
+            <section class="content-grid">
+                <div class="grid">
+                    <!-- Features -->
+                    <div class="card feature-card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-star"></i> Key Features</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="feature-list">
+                                <div class="feature-item">
+                                    <i class="fas fa-mobile-alt"></i>
+                                    <span>Readable by Rusted Warfare Mobile</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-lock"></i>
+                                    <span>Obfuscated Package</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-check-circle"></i>
+                                    <span>Fully Functional .RWMOD File</span>
+                                </div>
+                                <div class="feature-item">
+                                    <i class="fas fa-play"></i>
+                                    <span>100% READABLE and PLAYABLE</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Issues -->
+                    <div class="card issues-card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-bug"></i> Issues</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="issues-container">
+                                <ul id="issues-list" class="issues-list">
+                                    <li class="loading-item">Loading issues…</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Changelog -->
+                    <div class="card changelog-card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-history"></i> Changelog</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="changelog-list">
+                                <div class="changelog-item latest">
+                                    <span class="version">v1.3.1</span>
+                                    <span class="description">Improved the tampering function</span>
+                                    <span class="badge">Latest</span>
+                                </div>
+                                <div class="changelog-item">
+                                    <span class="version">v1.3.0</span>
+                                    <span class="description">Initial public release</span>
+                                </div>
+                                <div class="changelog-item">
+                                    <span class="version">v1.2.5</span>
+                                    <span class="description">Installer & Portable Created</span>
+                                </div>
+                                <div class="changelog-item">
+                                    <span class="version">v1.2.0</span>
+                                    <span class="description">Second Build Created</span>
+                                </div>
+                                <div class="changelog-item">
+                                    <span class="version">v1.1.0</span>
+                                    <span class="description">First Build Created</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+
+            <!-- Showcase Section -->
+            <section class="showcase-section">
+                <div class="showcase-grid">
+                    <div class="card showcase-card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-play-circle"></i> Usage of the Tool</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="media-container">
+                                <img src="https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/docs/showcase.gif?raw=true"
+                                     alt="Usage GIF" class="showcase-media" loading="lazy">
+                                <div class="media-caption">Live preview GIF</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="card showcase-card">
+                        <div class="card-header">
+                            <h3><i class="fas fa-desktop"></i> User Interface of the Tool</h3>
+                        </div>
+                        <div class="card-content">
+                            <div class="media-container">
+                                <a href="https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/docs/screenshot.PNG?raw=true" 
+                                   target="_blank" class="media-link">
+                                    <img src="https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/docs/screenshot.PNG?raw=true"
+                                         alt="Program UI Screenshot" class="showcase-media" loading="lazy">
+                                </a>
+                                <div class="media-caption">Click to view full Program UI</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- About the Author Section -->
+            <section class="author-section">
+                <div class="card author-card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-user"></i> About the Author</h2>
+                    </div>
+                    <div class="card-content">
+                        <div class="author-info">
+                            <div class="author-details">
+                                <h3>Moggstone</h3>
+                                <p class="author-description">
+                                    RWMod Repacker was developed by Moggstone, a passionate developer dedicated to helping the 
+                                    Rusted Warfare modding community protect their creative work. With a focus on providing 
+                                    practical solutions for mod authors, this tool represents a commitment to supporting 
+                                    content creators in the gaming community.
+                                </p>
+                                <div class="author-links">
+                                    <a href="https://github.com/Moggle-Khraum" target="_blank" class="btn btn-secondary">
+                                        <i class="fab fa-github"></i> GitHub Profile
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- License Agreement Section -->
+            <section class="license-section">
+                <div class="card license-card">
+                    <div class="card-header">
+                        <h2><i class="fas fa-file-contract"></i> License Agreement</h2>
+                    </div>
+                    <div class="card-content">
+                        <div class="license-content">
+                            <h3>Software License</h3>
+                            <p>
+                                RWMod Repacker is provided as-is for the Rusted Warfare modding community. 
+                                By downloading and using this software, you agree to the following terms:
+                            </p>
+                            <ul class="license-terms">
+                                <li><strong>Personal Use:</strong> This software is free for personal and non-commercial use.</li>
+                                <li><strong>No Warranty:</strong> The software is provided without any warranty or guarantee of functionality.</li>
+                                <li><strong>Limitation of Liability:</strong> The author is not responsible for any damage or loss resulting from the use of this software.</li>
+                                <li><strong>Modification:</strong> Users may not reverse engineer, modify, or redistribute this software without permission.</li>
+                                <li><strong>Compliance:</strong> Users must comply with all applicable laws and respect the intellectual property rights of others.</li>
+                            </ul>
+                            <div class="license-footer">
+                                <p class="license-note">
+                                    <i class="fas fa-info-circle"></i>
+                                    For commercial use or licensing inquiries, please contact the author through GitHub.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
     </div>
 
-    <!-- Middle Row: Usage GIF | Program UI -->
-    <div style="display:flex; flex-wrap:wrap; gap:20px; justify-content:center; margin-top:25px;">
-        <div class="features" style="flex:1 1 300px;">
-            <h3><center>💡 Usage of the Tool:</center></h3>
-            <img src="https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/docs/showcase.gif?raw=true"
-                 alt="Usage GIF" style="max-width:100%; border-radius:8px;">
-            <div style="font-size:0.85em; color:#aaa; text-align:center;">(Live preview GIF)</div>
+    <!-- BACK TO TOP -->
+    <button id="backToTop" class="back-to-top" title="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2025 Moggstone | Built with GitHub Pages & Replit</p>
         </div>
+    </footer>
 
-        <div class="features" style="flex:1 1 300px;">
-            <h3><center>💻 User Interface of the Tool:</center></h3>
-            <center><a href="https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/docs/screenshot.PNG?raw=true" target="_blank">
-                <img src="https://github.com/Moggle-Khraum/rwmod_repacker/blob/main/docs/screenshot.PNG?raw=true"
-                     alt="Program UI Screenshot" style="max-width:100%; border-radius:8px;">
-            </a></center>
-            <div style="font-size:0.85em; color:#aaa; margin-top:5px;text-align:center;">(Click to view full Program UI)</div>
-        </div>
-    </div>
-
-
-</div>
-
-</section>
-
-<script>
-const list = document.getElementById("issues-list");
-list.innerHTML = "<li>Loading issues…</li>";
-
-fetch("https://api.github.com/repos/Moggle-Khraum/rwmod_repacker/issues?per_page=5&state=open")
-  .then(res => res.json())
-  .then(data => {
-    list.innerHTML = "";
-    if (!Array.isArray(data) || data.length === 0) {
-      list.innerHTML = "<li>No open issues</li>";
-    } else {
-      data.forEach(issue => {
-        const li = document.createElement("li");
-        li.innerHTML =
-          `<a href="${issue.html_url}" target="_blank" style="color:var(--accent); text-decoration:none;">
-            #${issue.number} – ${issue.title}
-          </a>`;
-        list.appendChild(li);
-      });
-    }
-
-    const footerLi = document.createElement("li");
-    footerLi.style.listStyle = "none";
-    footerLi.style.marginTop = "4px";
-    footerLi.innerHTML =
-      `<a href="https://github.com/Moggle-Khraum/rwmod_repacker/issues" target="_blank"
-        style="color:var(--accent); text-decoration:none; font-weight:bold;">View all →</a>`;
-    list.appendChild(footerLi);
-  })
-  .catch(() => {
-    list.innerHTML = "<li>Could not load issues</li>";
-  });
-  
-  // BACK TO TOP
-	window.addEventListener('scroll', () => {
-		const btn = document.getElementById('backToTop');
-		btn.style.display = (document.documentElement.scrollTop > 300) ? 'block' : 'none';
-  });
-
-</script>
-<!-- Floating Back To Top -->
-<button id="backToTop" onclick="window.scrollTo({top: 0, behavior: 'smooth'})" style="
-    position: fixed;
-    bottom: 25px;
-    right: 25px;
-    background: var(--accent);
-    color: #000;
-    border: none;
-    padding: 12px;
-    border-radius: 50%;
-    cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-    display:none;
-">
-    <img src="https://imgs.search.brave.com/fo2Ra4vKUJUG7DiojvbI4NWfEHjBYiosO4yA1J2CJLA/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly91eHdp/bmcuY29tL3dwLWNv/bnRlbnQvdGhlbWVz/L3V4d2luZy9kb3du/bG9hZC9hcnJvdy1k/aXJlY3Rpb24vYXJy/b3ctdG9wLWRpcmVj/dGlvbi1yZWQtaWNv/bi5zdmc"
-         style="width:20px;height:20px;">
-</button>
-</main>
-
-<div style="text-align:center; margin-top:40px;">
-    <a href="https://github.com/Moggle-Khraum/rwmod_repacker" target="_blank"
-       style="background:var(--accent); color:black; padding:12px 24px; font-weight:bold; border-radius:6px; text-decoration:none;">
-        📚 View README / Documentation
-    </a>
-</div>
-
-<footer>
-    <p>© 2025 Moggstone | Built with Github Pages</p>
-</footer>
-
+    <!-- Scripts -->
+    <script>
+        // GitHub Issues Fetcher
+        const issuesList = document.getElementById("issues-list");
+        
+        fetch("https://api.github.com/repos/Moggle-Khraum/rwmod_repacker/issues?per_page=5&state=open")
+            .then(res => res.json())
+            .then(data => {
+                issuesList.innerHTML = "";
+                if (!Array.isArray(data) || data.length === 0) {
+                    issuesList.innerHTML = '<li class="no-issues">No open issues</li>';
+                } else {
+                    data.forEach(issue => {
+                        const li = document.createElement("li");
+                        li.className = "issue-item";
+                        li.innerHTML = `
+                            <a href="${issue.html_url}" target="_blank" class="issue-link">
+                                <span class="issue-number">#${issue.number}</span>
+                                <span class="issue-title">${issue.title}</span>
+                            </a>
+                        `;
+                        issuesList.appendChild(li);
+                    });
+                }
+                
+                const viewAllLi = document.createElement("li");
+                viewAllLi.className = "view-all-item";
+                viewAllLi.innerHTML = `
+                    <a href="https://github.com/Moggle-Khraum/rwmod_repacker/issues" target="_blank" class="view-all-link">
+                        <i class="fas fa-external-link-alt"></i> View all on GitHub
+                    </a>
+                `;
+                issuesList.appendChild(viewAllLi);
+            })
+            .catch(() => {
+                issuesList.innerHTML = '<li class="error-item">Could not load issues</li>';
+            });
+    </script>
+    <script src="script.js"></script>
 </body>
 </html>
