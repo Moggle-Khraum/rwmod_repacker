@@ -8,7 +8,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 </head>
-
 <body class="dark-mode">
     <!-- NAVBAR -->
     <nav class="navbar">
@@ -71,7 +70,7 @@
                         </div>
                         
                         <div class="btn-container">
-                            <a href="downloads.html" class="btn btn-primary">
+                            <a href="/static/downloads.html" class="btn btn-primary">
                                 <i class="fas fa-download"></i> See Download Page
                             </a>
                             <a href="https://github.com/Moggle-Khraum/rwmod_repacker" target="_blank" class="btn btn-secondary">
@@ -130,16 +129,40 @@
                     <div class="card changelog-card">
                         <div class="card-header">
                             <h3><i class="fas fa-history"></i> Changelog</h3>
+                            <p class="section-subtitle">Click on any version to see detailed changes</p>
                         </div>
                         <div class="card-content">
                             <div class="changelog-list">
-                                <p>Loading changelog...</p>
+                                <button class="changelog-item latest" data-version="v1.3.1">
+                                    <span class="version">v1.3.1</span>
+                                    <span class="description">Improved the tampering function</span>
+                                    <span class="badge">Latest</span>
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                                <button class="changelog-item" data-version="v1.3.0">
+                                    <span class="version">v1.3.0</span>
+                                    <span class="description">Initial public release</span>
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                                <button class="changelog-item" data-version="v1.2.5">
+                                    <span class="version">v1.2.5</span>
+                                    <span class="description">Installer & Portable Created</span>
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                                <button class="changelog-item" data-version="v1.2.0">
+                                    <span class="version">v1.2.0</span>
+                                    <span class="description">Second Build Created</span>
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
+                                <button class="changelog-item" data-version="v1.1.0">
+                                    <span class="version">v1.1.0</span>
+                                    <span class="description">First Build Created</span>
+                                    <i class="fas fa-chevron-right"></i>
+                                </button>
                             </div>
                         </div>
                     </div>
                 </div>
-					
-					<!-- Changelog -->
             </section>
 
 
@@ -237,6 +260,22 @@
         </main>
     </div>
 
+    <!-- Changelog Modal -->
+    <div id="changelogModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 id="modalVersion"></h2>
+                <button class="modal-close" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div id="modalReleaseDate" class="release-date"></div>
+                <div id="modalChanges" class="changes-content"></div>
+            </div>
+        </div>
+    </div>
+
     <!-- BACK TO TOP -->
     <button id="backToTop" class="back-to-top" title="Back to top">
         <i class="fas fa-chevron-up"></i>
@@ -245,7 +284,7 @@
     <!-- FOOTER -->
     <footer class="footer">
         <div class="footer-content">
-            <p>&copy; 2025 Moggstone | Built with GitHub Pages & Replit</p>
+            <p>&copy; 2025 Moggstone | Built with GitHub Pages</p>
         </div>
     </footer>
 
@@ -286,70 +325,7 @@
             .catch(() => {
                 issuesList.innerHTML = '<li class="error-item">Could not load issues</li>';
             });
-			
-			
-			
-			// Changelog Fetcher
-			const changelogList = document.querySelector(".changelog-list");
-			fetch("changelog.json")
-			  .then(res => {
-				if (!res.ok) throw new Error(`HTTP error! ${res.status}`);
-				return res.json();
-			  })
-			  .then(data => {
-				changelogList.innerHTML = ""; // clear placeholder
-
-				data.forEach(entry => {
-				  const div = document.createElement("div");
-				  div.className = "changelog-item" + (entry.latest ? " latest" : "");
-				  div.innerHTML = `
-					<span class="version">${entry.version}</span>
-					<span class="description">${entry.title}</span>
-					${entry.latest ? '<span class="badge">Latest</span>' : ""}
-				  `;
-				  div.addEventListener("click", () => {
-					openChangelogPopup(entry); // function to show popup
-				  });
-				  changelogList.appendChild(div);
-				});
-			  })
-			  .catch(err => {
-				console.error("Failed to load changelog:", err);
-				changelogList.innerHTML = '<div class="error">Could not load changelog</div>';
-			  });
-</script>
-
-			
-			
-			
     </script>
     <script src="script.js"></script>
-	
-	<!-- Version Modal -->
-	<div class="modal" id="versionModal">
-		<div class="modal-content">
-			<div class="modal-header">
-				<h3 id="modalTitle"><i class="fas fa-history"></i> Version Details</h3>
-				<button class="close-btn" id="closeVersion">&times;</button>
-			</div>
-			<div class="modal-body" id="modalBody"></div>
-		</div>
-	</div>
-
-		
-		
-		
-		
-		
-
-      <!-- Details will be injected here -->
-	</div>
-  </div>
-</div>
-
-	
-	
-	
-	
 </body>
 </html>
