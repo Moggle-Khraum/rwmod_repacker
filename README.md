@@ -15,13 +15,13 @@ The program was made through the use of multiple AI's such as ChatGPT, DeepSeek,
 - ----------- TOOL FEATURES --------------
 - 🖥️ Simple GUI interface
 - 📂 Easy Click in Mod/Output Selection
-- 🛡️ Select Modes for Protection: Partial/Maximum
+- 🛡️ 5 Modes of Protection: Featherweight, Ironveil, Overcloak, Matryoshka Doll, Vaultguard, Dragonlock, Voidseal
 - 📰 Reads 'MOD-INFO.txt' of the Mod's Folder
-- 🎮 .RWMOD file is still readable and playable
+- 🎮 .RWMOD file is still recognized as a Valid ZIP file by Rusted Warfare
 - ---------- TOOL FUNCTIONS -------------
-- 🔒 Scans files, Zips your file, inject dummies, Convert to .RWMOD
-- 🖼️ It has Mod-info Previewer, View History Log & Delete Log, About Repacker, Theme Editor[BETA]
-- 🔏 You can select Modes of Security: Partial or Maximum.
+- 🔒 
+- 🖼️ 
+- 🔏 
 
 ## 📥 Pre-Built Downloads
 | Platform | Package | Source |
