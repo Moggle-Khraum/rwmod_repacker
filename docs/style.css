@@ -774,15 +774,29 @@ body {
     transform: scale(1.02);
 }
 
+.showcase-flex {
+    display: flex;
+    gap: 32px;
+    justify-content: center;
+    align-items: flex-start;
+    flex-wrap: wrap; /* makes it stack on smaller screens */
+}
+
+.showcase-flex .media-container {
+    flex: 1 1 500px; /* each takes equal space, minimum 500px */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .showcase-media {
-    width: 100%;
-    max-width: 800px; /* adjust as needed */
+    width: 100%;       /* scale equally */
+    max-width: 600px;  /* limit max width */
     height: auto;
     border-radius: 12px;
     box-shadow: 0 8px 32px var(--shadow);
     transition: all 0.3s ease;
 }
-
 
 
 .showcase-media:hover {
