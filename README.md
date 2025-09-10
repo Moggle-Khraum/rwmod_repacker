@@ -3,10 +3,13 @@
 <div align="center">
 <img width="200" height="195" src="docs/lock.png" alt="Icon of the tool" title="Tool Icon">
 </div>
-## THE SOURCE IN THE SRC FOLDER IS THE OLD VERSION, THE NEWEST IS 1.3.5.
+
 
 ## 📌 Introducing RWMod Anti-theft Repacker Tool
 - A security-focused tool that repackages your MOD folders into an obfuscated .ZIP file with layered protections, then converted to `.RWMOD` files. Each files repackage by RWMod Repacker is both valid and readable by the game 'Rusted Warfare' which is both available on [Android](https://play.google.com/store/apps/details?id=com.corrodinggames.rts&hl=en_US), [iOS](https://apps.apple.com/us/app/rusted-warfare-rts/id1514329124), [PC via STEAM](https://store.steampowered.com/app/647960/Rusted_Warfare__RTS/), and [Mac](https://apps.apple.com/us/app/rusted-warfare-rts/id1514329124) platforms. If you have any trust issues, kindly use the Sanity Checker to check the validity of the outputed file to save your own sanity.
+
+## THE SOURCE IN THE SRC FOLDER IS THE OLD VERSION, THE NEWEST IS 1.3.5.
+- If you want to get a hold of the source of the 1.3.5, you can use the ISSUE to ask me the source code, where and what would you do with source code.
 
 ## 🛡️ Protection Process 🔒
 - The RWMod Repacker uses a multiple and common obfuscation methods to guard your .RWMOD files from being casually stolen and extracted by them malicious actors. Do REMEMBER that OBFUSCATION does NOT mean ABSOLUTE Protection. If you want an absolute protection, use the Repacker, compressed the output and put a password on it, that is the basic encryption method. The author had used multiple modules, installations, and CxFreeze to distribute the program. If you are still wary of the files here in, check the website [HERE](https://moggle-khraum.github.io/rwmod_repacker/downloads.html) to check the result of VirusTotal and Jotti, you can also do your own scanning to save your own sanity.
