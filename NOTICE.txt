@@ -1,0 +1,7 @@
+RWMod Repacker Tool
+Copyright (c) [year] [Your Name or Alias]
+
+This product includes software developed by [Your Name or Alias].
+Licensed under the RWMod Repacker License Agreement (Non-Commercial).
+
+For license details, see LICENSE.txt

@@ -1,0 +1,55 @@
+RWMod Repacker License Agreement (MIT/Apache + NonCommercial)
+
+Copyright (c) [year] [Your Name or Alias]
+
+1. ACCEPTANCE OF TERMS
+By downloading, installing, or using the RWMod Repacker tool ("the Software") you ("User") acknowledge that you have read, understood, and agree to be bound by the terms of this License Agreement. If you do not agree to these terms, do not use the Software.
+
+2. GRANT OF LICENSE
+The Author grants User a limited, non-exclusive, non-transferable, revocable license to use, copy, and distribute the Software for personal, educational, and non-commercial purposes only.
+
+Redistribution must include this license and proper attribution to the original Author.
+
+3. NO WARRANTY CLAUSE
+THE SOFTWARE IS PROVIDED "AS IS" AND "AS AVAILABLE" WITHOUT ANY WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, OR NON-INFRINGEMENT. The entire risk as to the quality and performance of the Software is with User.
+
+4. LIMITATION OF LIABILITY
+IN NO EVENT SHALL THE AUTHOR, CONTRIBUTORS, OR DISTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+5. SPECIFIC DISCLAIMERS
+User acknowledges and agrees that:
+a) NO SECURITY GUARANTEE: The obfuscation and protection mechanisms provided by the Software do not guarantee absolute security or protection against unauthorized access, reverse engineering, or modification of protected files.
+b) PROTECTION FAILURE: The Author makes no representations or warranties that the protection methods will prevent cracking, extraction, or analysis of protected content by third parties.
+c) DATA LOSS RISK: User assumes all responsibility for backing up original files and data. The Author is not responsible for any corruption, loss, or damage to files processed by the Software.
+d) EFFECTIVENESS VARIANCE: The effectiveness of protection may vary depending on factors beyond the Author's control, including but not limited to: technical expertise of potential attackers, available computing resources, and evolving analysis techniques.
+
+6. USER RESPONSIBILITIES
+User agrees to:
+a) Test the Software with non-critical files before processing important data.
+b) Maintain backups of all original files before using the Software.
+c) Understand that obfuscation is not equivalent to encryption or absolute security.
+d) Accept full responsibility for any consequences resulting from the use of protected files.
+
+7. NO TECHNICAL SUPPORT
+The Software is provided without obligation of technical support, maintenance, updates, or bug fixes. The Author may, at their sole discretion, provide assistance but is under no obligation to do so.
+
+8. INTELLECTUAL PROPERTY
+All rights, title, and interest in and to the Software remain the property of the Author.
+
+- User may not reverse engineer, decompile, disassemble, or attempt to derive the source code of the Software.
+- Exception: If the User obtains explicit written permission from the Author, then modification, extension, or adaptation of the Software is permitted under the same license terms, provided proper attribution is given.
+
+9. NON-COMMERCIAL USE
+The Software may not be sold, licensed, or otherwise exploited for commercial purposes, in whole or in part. It is intended strictly for personal, educational, and non-commercial use.
+
+10. NOTICE REQUIREMENT
+Redistributions of the Software must include:
+- This License Agreement.
+- A clear attribution to the original Author.
+- A copy of the NOTICE file provided below.
+
+11. GOVERNING LAW
+This License shall be governed by and construed in accordance with the laws of [Your Country/State], without regard to its conflict of law provisions.
+
+12. COMPLETE AGREEMENT
+This License constitutes the entire agreement between the parties concerning the Software and supersedes all prior agreements, whether oral or written.
