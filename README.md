@@ -50,17 +50,18 @@
    - Then browse your folder, select output location, PACK IT, and if successful, your .RWMOD is now complete.
 
 ## 📑 Note & License 🛡️
-
-RWMod Repacker Tool
-Copyright (c) **2025** **Moggle-Khraum**
+   RWMod Repacker Tool
+   Copyright (c) **2025** **Moggle-Khraum**
 
 ![License: NonCommercial](https://img.shields.io/badge/License-MIT%2FApache--NC-blue.svg)
 
-This product includes software developed by **Moggle-Khraum**.
-Licensed under the RWMod Repacker License Agreement (Non-Commercial).
+- This product includes software developed by **Moggle-Khraum**.
+- Licensed under the RWMod Repacker License Agreement (Non-Commercial).
 
-This project is licensed under the **RWMod Repacker License (MIT/Apache + NonCommercial)**.
-For more license details, see **[LICENSE.txt](./LICENSE.txt)** file. The License Agreement in the Tool is outdated and is overwritten by the new Updated LICENSE.
+- This project is licensed under the **RWMod Repacker License (MIT/Apache + NonCommercial)**.
+- For more license details, see **[LICENSE.txt](./LICENSE.txt)** file. 
+- The License Agreement in the Tool is outdated and is overwritten by the new Updated LICENSE.
+
 ---
 
 © 2025 Moggstone | made with time, anger, and coffee~ | [Report Issues](https://github.com/Moggle-Khraum/rwmod_repacker/issues)
