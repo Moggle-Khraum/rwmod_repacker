@@ -1,6 +1,6 @@
 RWMod Repacker License Agreement (MIT/Apache + NonCommercial)
 
-Copyright (c) [year] [Your Name or Alias]
+Copyright (c) **2025 Moggle-Khraum**
 
 1. ACCEPTANCE OF TERMS
 By downloading, installing, or using the RWMod Repacker tool ("the Software") you ("User") acknowledge that you have read, understood, and agree to be bound by the terms of this License Agreement. If you do not agree to these terms, do not use the Software.
