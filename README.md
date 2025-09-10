@@ -14,7 +14,15 @@
 - Both the program RWMod Repacker 1.3.5 and Sanity Checker 0.5 was made through the use of multiple AI but mostly DeepSeek and ChatGPT's PythonGPT, the author also used Gemini AI in asking trivial questions and also the first designer of the website made in Github Pages. The website was overhauled with the use of Replit, another AI specialized in designing apps and websites. During the making, the process was ardous as sometimes after asking so much questions, feeding it the code for assisted debugging, the AI starts hallucinating and spits out the same code prone with errors. To solve this dilemma, I have used other AI's which come in handy in answering my specific queries, assists me in debugging the code in Python, exporting the PY Script into a working EXE program using CxFreeze.
 
 ## ✒️ Author's Last Notes 📑
-The version 1.3.5 will be the last of the last version there is to RWMod Repacker. There will be no more updates in the future as I was already burnout and out of brainjuice from being amad at ChatGPT that spews outerroneous codes and DeepSeek is also blueballing me in prompting as the server's always busy. Adios~
+- The version 1.3.5 will be the last of the last version there is to RWMod Repacker. There will be no more updates in the future as I was already burnout and out of brainjuice from being amad at ChatGPT that spews outerroneous codes and DeepSeek is also blueballing me in prompting as the server's always busy. Adios~
+
+## 📑 License 🛡️
+- This project is licensed under the **RWMod Repacker License (MIT/Apache + NonCommercial)**.  
+See the [LICENSE.txt](./LICENSE.txt) file for details. The License Agreement in the Tool has not been updated yet.
+
+   ![License: NonCommercial](https://img.shields.io/badge/License-MIT%2FApache--NC-blue.svg)
+
+
 
 ## 📌 Features
 - ----------- TOOL FEATURES --------------
