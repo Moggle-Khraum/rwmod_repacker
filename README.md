@@ -3,6 +3,7 @@
 <div align="center">
 <img width="200" height="195" src="docs/lock.png" alt="Icon of the tool" title="Tool Icon">
 </div>
+## THE SOURCE IN THE SRC FOLDER IS THE OLD VERSION, THE NEWEST IS 1.3.5.
 
 ## 📌 Introducing RWMod Anti-theft Repacker Tool
 - A security-focused tool that repackages your MOD folders into an obfuscated .ZIP file with layered protections, then converted to `.RWMOD` files. Each files repackage by RWMod Repacker is both valid and readable by the game 'Rusted Warfare' which is both available on [Android](https://play.google.com/store/apps/details?id=com.corrodinggames.rts&hl=en_US), [iOS](https://apps.apple.com/us/app/rusted-warfare-rts/id1514329124), [PC via STEAM](https://store.steampowered.com/app/647960/Rusted_Warfare__RTS/), and [Mac](https://apps.apple.com/us/app/rusted-warfare-rts/id1514329124) platforms. If you have any trust issues, kindly use the Sanity Checker to check the validity of the outputed file to save your own sanity.
