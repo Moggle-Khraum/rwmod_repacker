@@ -1,7 +1,7 @@
 # ⚙️ RWMod Repacker 🛡️
 
 <div align="center">
-<img width="800" height=295" src="docs/lockLogo.png" alt="Icon of the tool" title="Tool Icon">
+<img width="800" height=325" src="docs/lockLogo.png" alt="Icon of the tool" title="Tool Icon">
 </div>
 
 
