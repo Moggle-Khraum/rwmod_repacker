@@ -20,12 +20,18 @@
 ## ✒️ Author's Last Notes 📑
 - The version 1.3.5 will be the last of the last version there is to RWMod Repacker. There will be no more updates in the future as I was already burnout and out of brainjuice from being amad at ChatGPT that spews outerroneous codes and DeepSeek is also blueballing me in prompting as the server's always busy. Adios~
 
-## 📑 License 🛡️
-- This project is licensed under the **RWMod Repacker License (MIT/Apache + NonCommercial)**.  
-See the [LICENSE.txt](./LICENSE.txt) file for details. The License Agreement in the Tool has not been updated yet.
+## 📑 Note & License 🛡️
 
-   ![License: NonCommercial](https://img.shields.io/badge/License-MIT%2FApache--NC-blue.svg)
+RWMod Repacker Tool
+Copyright (c) [2025] [Moggle-Khraum]
+![License: NonCommercial](https://img.shields.io/badge/License-MIT%2FApache--NC-blue.svg)
 
+This product includes software developed by [Moggle-Khraum].
+Licensed under the RWMod Repacker License Agreement (Non-Commercial).
+
+This project is licensed under the **RWMod Repacker License (MIT/Apache + NonCommercial)**.
+For license details, see LICENSE.txt
+See the [LICENSE.txt](./LICENSE.txt) file for details. The License Agreement in the Tool is outdated and is overwritten by the new Updated LICENSE.
 
 
 ## 📌 Features
