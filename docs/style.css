@@ -761,13 +761,8 @@ body {
     background: var(--gradient-secondary);
 }
 
-
-
-/* Keep existing styles for images */
-.media-container img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
+.media-container {
+    text-align: center;
 }
 
 .media-link {
