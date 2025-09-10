@@ -20,20 +20,6 @@
 ## ✒️ Author's Last Notes 📑
 - The version 1.3.5 will be the last of the last version there is to RWMod Repacker. There will be no more updates in the future as I was already burnout and out of brainjuice from being amad at ChatGPT that spews outerroneous codes and DeepSeek is also blueballing me in prompting as the server's always busy. Adios~
 
-## 📑 Note & License 🛡️
-
-RWMod Repacker Tool
-Copyright (c) **2025** **Moggle-Khraum**
-
-![License: NonCommercial](https://img.shields.io/badge/License-MIT%2FApache--NC-blue.svg)
-
-This product includes software developed by **Moggle-Khraum**.
-Licensed under the RWMod Repacker License Agreement (Non-Commercial).
-
-This project is licensed under the **RWMod Repacker License (MIT/Apache + NonCommercial)**.
-For more license details, see **[LICENSE.txt](./LICENSE.txt)** file. The License Agreement in the Tool is outdated and is overwritten by the new Updated LICENSE.
-
-
 ## 📌 Features
 - ----------- TOOL FEATURES --------------
 - 🖥️ Simple GUI interface
@@ -63,6 +49,18 @@ For more license details, see **[LICENSE.txt](./LICENSE.txt)** file. The License
    - Make sure both the SCRIPT and your MOD Folder is in your INTERNAL STORAGE. Open the Script on Pyroid 3 and Run it.
    - Then browse your folder, select output location, PACK IT, and if successful, your .RWMOD is now complete.
 
+## 📑 Note & License 🛡️
+
+RWMod Repacker Tool
+Copyright (c) **2025** **Moggle-Khraum**
+
+![License: NonCommercial](https://img.shields.io/badge/License-MIT%2FApache--NC-blue.svg)
+
+This product includes software developed by **Moggle-Khraum**.
+Licensed under the RWMod Repacker License Agreement (Non-Commercial).
+
+This project is licensed under the **RWMod Repacker License (MIT/Apache + NonCommercial)**.
+For more license details, see **[LICENSE.txt](./LICENSE.txt)** file. The License Agreement in the Tool is outdated and is overwritten by the new Updated LICENSE.
 ---
 
 © 2025 Moggstone | made with time, anger, and coffee~ | [Report Issues](https://github.com/Moggle-Khraum/rwmod_repacker/issues)
