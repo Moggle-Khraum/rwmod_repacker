@@ -929,6 +929,20 @@ body {
     margin: 0;
 }
 
+.license-link {
+    color: inherit;       /* matches surrounding text instead of blue */
+    text-decoration: none; /* removes underline */
+    font-weight: bold;    /* makes it stand out */
+}
+
+.license-link:hover {
+    color: #007bff;       /* add hover effect (blue on hover, optional) */
+    text-decoration: underline;
+}
+
+
+
+
 /* ===================
    ANIMATIONS
    =================== */
