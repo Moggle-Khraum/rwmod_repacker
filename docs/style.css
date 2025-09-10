@@ -775,13 +775,14 @@ body {
 }
 
 .showcase-media {
-    width: 600px;       /* fixed width */
-    max-width: 100%;    /* still responsive */
+    width: 100%;
+    max-width: 800px; /* adjust as needed */
     height: auto;
     border-radius: 12px;
     box-shadow: 0 8px 32px var(--shadow);
     transition: all 0.3s ease;
 }
+
 
 
 .showcase-media:hover {
